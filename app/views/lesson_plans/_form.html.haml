@@ -1,19 +1,18 @@
-= form_for new_user_lesson_plan_path(current_user) do |f|
+= form_for [:user, @lesson_plan] do |f|
   - if @lesson_plan.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@lesson_plan.errors.count, "error")} prohibited this lesson_plan from being saved:"
-      %ul
-        - @lesson_plan.errors.full_messages.each do |msg|
-          %li= msg
+    %div{:class => "alert alert-error fade in"}
+      %a.close{"data-dismiss" => "alert"} ×
+      - @lesson_plan.errors.full_messages.each do |msg|
+        = content_tag :div, msg, :id => "flash_errors"
 
   .field
     = f.label :name
     = f.text_field :name
   .field
     = f.label :description
-    = f.text_field :description
+    = f.text_area :description
   .field
     = f.label :lesson_plan_file
-    = f.text_field :lesson_plan_file
+    = f.file_field :lesson_plan_file
   .actions
     = f.submit 'Save'

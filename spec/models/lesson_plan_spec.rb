@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe LessonPlan do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:lesson_plan){FactoryGirl.create :lesson_plan}
+
+  context "entering correct information" do
+    describe "#save" do
+      specify{lesson_plan.should be_valid}
+    end
+  end
 end

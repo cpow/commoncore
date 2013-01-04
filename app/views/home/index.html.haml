@@ -1,6 +1,8 @@
 %h3 Home
-- @users.each do |user|
+User: #{link_to @user.name, @user}
+
+- @lesson_plans.each do |lesson_plan|
   %p
-    User: #{link_to user.name, user}
+    lesson plan: #{link_to lesson_plan.name, user_lesson_plan_path(lesson_plan, current_user) if lesson_plan.name}
 
 =link_to "Create Lesson Plan", new_user_lesson_plan_path(current_user)

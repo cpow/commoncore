@@ -10,6 +10,6 @@
   %b Lesson plan file:
   = @lesson_plan.lesson_plan_file
 
-= link_to 'Edit', edit_lesson_plan_path(@lesson_plan)
+= link_to 'Edit', edit_user_lesson_plan_path(@lesson_plan, current_user)
 \|
-= link_to 'Back', lesson_plans_path
+= link_to 'Back', user_lesson_plans_path(current_user)

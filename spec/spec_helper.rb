@@ -5,6 +5,8 @@ require 'rspec/rails'
 require 'email_spec'
 require 'rspec/autorun'
 
+include ActionDispatch::TestProcess
+
 Capybara.javascript_driver = :webkit
 
 # Requires supporting ruby files with custom matchers and macros, etc,

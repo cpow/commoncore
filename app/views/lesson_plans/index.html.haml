@@ -14,9 +14,9 @@
       %td= lesson_plan.name
       %td= lesson_plan.description
       %td= lesson_plan.lesson_plan_file
-      %td= link_to 'Show', user_lesson_plan(lesson_plan, current_user)
+      %td= link_to 'Show', user_lesson_plan_path(lesson_plan, current_user)
       %td= link_to 'Edit', edit_user_lesson_plan_path(lesson_plan, current_user)
-      %td= link_to 'Destroy', user_lesson_plan(lesson_plan, current_user), method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Destroy', user_lesson_plan_path(lesson_plan, current_user), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
