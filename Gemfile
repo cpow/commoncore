@@ -33,3 +33,4 @@ gem "terminal-notifier-guard", :group => :test
 gem "sinon-rails", :group => :test
 gem "capybara-webkit", :group => :test
 gem "faker", :group => [:development, :test]
+gem "carrierwave"
