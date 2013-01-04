@@ -4,6 +4,9 @@ Commoncore::Application.routes.draw do
   end
   root :to => "landing#index"
   devise_for :users
-  resources :users
   resources :landing
+  
+  resources :users do
+    resources :lesson_plans
+  end
 end
