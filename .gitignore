@@ -9,6 +9,8 @@
 # Corrections? Improvements? Create a GitHub issue:
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
+#
+/public/uploads
 
 # rbenv
 .rbenv*
