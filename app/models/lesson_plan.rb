@@ -4,4 +4,5 @@ class LessonPlan < ActiveRecord::Base
   mount_uploader :lesson_plan_file, LessonPlanFileUploader
 
   validates :name, :description, :lesson_plan_file, presence: true
+  has_many :comments, :as => :commentable
 end

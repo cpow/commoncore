@@ -1,0 +1,13 @@
+%h1 Comments
+%ul
+  - @comments.each do |comment|
+    %li
+      comment.context
+    %li
+
+%h2 New Comment
+= form_for [current_user, @commentable, Comment.new] do |f|
+  = f.label :content
+  = f.text_area :content
+  .actions
+    = f.submit

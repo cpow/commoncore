@@ -250,6 +250,7 @@ DEPENDENCIES
   hpricot (>= 0.8.6)
   jquery-rails
   pg (>= 0.14.1)
+  pry
   quiet_assets (>= 1.0.1)
   rails (= 3.2.10)
   rb-fsevent
