@@ -5,4 +5,5 @@ class LessonPlan < ActiveRecord::Base
 
   validates :name, :description, :lesson_plan_file, presence: true
   has_many :comments, :as => :commentable
+  has_many :core_standards
 end
