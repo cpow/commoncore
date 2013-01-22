@@ -56,7 +56,7 @@ super_array.each do |e|
   end
   params = {
     dot_notation: e[:dot_notation],
-    statement: e[:statemnt],
+    statement: e[:statement],
     uri: e[:uri],
     docref_id: e[:docref_id],
     guid: e[:guid],
