@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :grade_level do
-    level "MyString"
+    level "K"
   end
 end

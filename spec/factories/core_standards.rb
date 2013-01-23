@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :core_standard do
-    statement "MyText"
-    docref_id "MyString"
-    guid "MyString"
-    uri "MyString"
-    related_id "MyString"
+    statement "this is a statment for test core standard"
+    docref_id "ABC123DOCREFID"
+    guid "ABC123GUID"
+    uri "https://google.com"
+    related_id "something here"
   end
 end
