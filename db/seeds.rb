@@ -28,7 +28,7 @@ GradeLevel.create! level: "12"
 GradeLevel.create! level: "11-12"
 
 array = []
-CSV.foreach("/Users/cpow/Downloads/E0607_ccss_identifiers.csv", :headers => true) do |row| 
+CSV.foreach("#{Rails.root}/public/E0607_ccss_identifiers.csv", :headers => true) do |row| 
   array << Typhoeus.get("#{row.to_hash["URI"]}.xml", followlocation: true) and puts row.to_hash
 end
 
