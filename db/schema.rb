@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117002926) do
+ActiveRecord::Schema.define(:version => 20130131063202) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20130117002926) do
     t.string   "dot_notation"
   end
 
+  create_table "core_standards_lesson_plans", :id => false, :force => true do |t|
+    t.integer "lesson_plan_id"
+    t.integer "core_standard_id"
+  end
+
   create_table "grade_levels", :force => true do |t|
     t.string   "level"
     t.datetime "created_at", :null => false
@@ -46,6 +51,11 @@ ActiveRecord::Schema.define(:version => 20130117002926) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.integer  "user_id"
+  end
+
+  create_table "lesson_plans_core_standards", :id => false, :force => true do |t|
+    t.integer "lesson_plan_id"
+    t.integer "core_standard_id"
   end
 
   create_table "levels", :force => true do |t|

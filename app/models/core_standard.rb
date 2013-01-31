@@ -3,5 +3,6 @@ class CoreStandard < ActiveRecord::Base
 
   has_many :levels
   has_many :grade_levels, :through => :levels
+  has_and_belongs_to_many :lesson_plans
   accepts_nested_attributes_for :grade_levels
 end

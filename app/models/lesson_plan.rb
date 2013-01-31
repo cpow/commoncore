@@ -3,7 +3,8 @@ class LessonPlan < ActiveRecord::Base
   belongs_to :user
   mount_uploader :lesson_plan_file, LessonPlanFileUploader
 
-  validates :name, :description, :lesson_plan_file, presence: true
+  validates :name, :description, presence: true
   has_many :comments, :as => :commentable
-  has_many :core_standards
+  has_and_belongs_to_many :core_standards
+  accepts_nested_attributes_for :core_standards
 end
