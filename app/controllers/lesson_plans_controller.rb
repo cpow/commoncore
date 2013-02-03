@@ -26,7 +26,9 @@ class LessonPlansController < ApplicationController
   # GET /lesson_plans/new
   # GET /lesson_plans/new.json
   def new
+    @core_standards = CoreStandard.all
     @lesson_plan = LessonPlan.new
+    @lesson_plan.core_standards.build
 
     respond_to do |format|
       format.html # new.html.erb

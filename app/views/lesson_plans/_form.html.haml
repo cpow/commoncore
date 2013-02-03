@@ -9,6 +9,13 @@
     = f.label :name
     = f.text_field :name
   .field
+    = f.label :core_standards
+    = f.fields_for :core_standards do |builder|
+      .fieldset
+        - @core_standards.each do |standard|
+          = builder.label standard.id
+          = builder.check_box :id, {:multiple => true}, standard.id
+  .field
     = f.label :description
     = f.text_area :description
   .field
