@@ -10,6 +10,10 @@
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 #
+#zeus stuff
+custom_plan.rb
+zeus.json
+
 /public/uploads
 
 # rbenv
