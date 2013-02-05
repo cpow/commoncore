@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe CoreStandard do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each){FactoryGirl.create :core_standard}
+  describe ".for_subject(Math)" do
+    specify{CoreStandard.for_subject("Math").count.should eql(1)}
+  end
 end

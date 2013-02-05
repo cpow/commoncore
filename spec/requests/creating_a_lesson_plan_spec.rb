@@ -8,7 +8,6 @@ describe "creating a new lesson plan" do
   end
 
   it "should be able to create lesson plan from the form" do
-    lesson_plan = FactoryGirl.build :lesson_plan
     visit root_path
     click_link "Create Lesson Plan"
     fill_in "Name", with: Faker::Name.first_name

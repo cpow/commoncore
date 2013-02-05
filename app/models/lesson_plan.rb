@@ -1,5 +1,5 @@
 class LessonPlan < ActiveRecord::Base
-  attr_accessible :description, :lesson_plan_file, :name
+  attr_accessible :description, :lesson_plan_file, :name, :core_standards_attributes
   belongs_to :user
   mount_uploader :lesson_plan_file, LessonPlanFileUploader
 

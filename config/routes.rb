@@ -6,6 +6,11 @@ Commoncore::Application.routes.draw do
   root :to => "landing#index"
   devise_for :users
   resources :landing
+  resources :core_standards do
+    collection do
+      get :specific_core_standard
+    end
+  end
   
   resources :users do
     resources :lesson_plans do
