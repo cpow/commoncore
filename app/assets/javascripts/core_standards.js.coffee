@@ -2,7 +2,7 @@ populate_core_standards = (data) ->
   standard_ul = $("ul#core_standard")
   for object in data
     do (object) ->
-      standard_ul.append("<li style='padding:2px;'><input style='padding-top:0;margin:0;' type='checkbox' value='#{object.id}' name='lesson_plan[core_standards_attributes][0][id][]'> <a  href='#' data-statement='#{object.statement}' class='dot_notation' id='#{object.dot_notation}'> #{object.dot_notation}</a></li>")
+      standard_ul.append("<li style='padding:2px;'><input style='padding-top:0;margin:0;' type='checkbox' value='#{object.id}'> <a  href='#' data-statement='#{object.statement}' class='dot_notation' id='#{object.dot_notation}'> #{object.dot_notation}</a></li>")
   standard_ul.slideDown()
   toggle_modal_listener()
 
