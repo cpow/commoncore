@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
   end
 
   def index
-    binding.pry
     @commentable = find_commentable
     @comments = @commentable.comments
   end

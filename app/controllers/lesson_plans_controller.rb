@@ -44,10 +44,11 @@ class LessonPlansController < ApplicationController
   # POST /lesson_plans
   # POST /lesson_plans.json
   def create
-    @lesson_plan = current_user.lesson_plans.build(params[:lesson_plan])
+    lesson_plan_saver = LessonPlanSaver.new({user: current_user, params: params})
+    @lesson_plan = lesson_plan_saver.lesson_plan
 
     respond_to do |format|
-      if @lesson_plan.save
+      if lesson_plan_saver.save
         format.html { redirect_to root_path, notice: 'Lesson plan was successfully created.' }
         format.json { render json: @lesson_plan, status: :created, location: @lesson_plan }
       else

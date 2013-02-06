@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :core_standard do
     statement "this is a statment for test core standard"
-    dot_notation "something.Math.something_else"
+    dot_notation "something.Math.something_else.K"
     docref_id "ABC123DOCREFID"
     guid "ABC123GUID"
     uri "https://google.com"
