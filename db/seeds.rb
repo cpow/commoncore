@@ -11,6 +11,8 @@ user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => EN
 puts 'user: ' << user.name
 user.add_role :admin
 
+user.posts.create!(title: "this is a seed post", body: "this is some body for the seed post.")
+
 puts 'CREATE ALL GRADE LEVELS'
 GradeLevel.create! level: "K"
 GradeLevel.create! level: "01"

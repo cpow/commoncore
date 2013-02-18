@@ -37,3 +37,4 @@ gem "capybara-webkit", :group => :test
 gem "faker", :group => [:development, :test]
 gem "carrierwave"
 gem "pry", :group => [:development, :test]
+gem "ckeditor"

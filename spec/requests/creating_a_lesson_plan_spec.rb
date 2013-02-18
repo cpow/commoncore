@@ -20,7 +20,7 @@ describe "creating a new lesson plan" do
     click_link('Math')
     page.should have_content(grade_level.core_standards.first.dot_notation)
     find(:xpath, "//input[@value='#{grade_level.core_standards.first.id}']").set(true)
-    fill_in "Description", with: "this is a description for a lesson plan"
+    fill_in_ckeditor 'lesson_plan_description', with: "Test body"
     attach_file('Lesson plan file', "#{Rails.root}/spec/fixtures/files/test_file.txt")
     click_button "Save"
     page.should have_content("Lesson plan was successfully created")
