@@ -3,6 +3,7 @@
     =link_to post.title, post_path(id: post.id)
   %p
     =post.body
-  %post_info
-    =post.created_at
+  .post_info
+    Created at:
+    = post.created_at.to_formatted_s(:long)
   %hr
