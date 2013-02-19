@@ -1,0 +1,16 @@
+= form_for [:user, @post] do |f|
+  - if @post.errors.any?
+    %div{:class => "alert alert-error fade in"}
+      %a.close{"data-dismiss" => "alert"} ×
+      - @post.errors.full_messages.each do |msg|
+        = content_tag :div, msg, :id => "flash_errors"
+  .field
+    = f.label :title
+    = f.text_field :title
+
+  .field
+    = f.label :body
+    = f.cktext_area :body
+
+  .actions
+    = f.submit 'Publish', :class => "btn btn-large"

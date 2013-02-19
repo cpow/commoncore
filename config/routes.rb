@@ -6,7 +6,10 @@ Commoncore::Application.routes.draw do
   root :to => "posts#index"
   devise_for :users
   resources :landing
-  resources :posts
+  resources :posts do
+    get :index
+    get :show
+  end
   resources :core_standards do
     collection do
       get :specific_core_standard
@@ -16,6 +19,10 @@ Commoncore::Application.routes.draw do
   resources :users do
     resources :lesson_plans do
       resources :comments
+    end
+    resources :posts do
+      get :new
+      post :create
     end
   end
 end
