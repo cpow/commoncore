@@ -61,3 +61,43 @@
   margin-bottom: 15px;
   padding: 7px 9px;
 }
+
+
+/* Jumbotrons
+-------------------------------------------------- */
+.jumbotron {
+  margin-top:90px;
+  text-align: center;
+}
+.jumbotron h1 {
+  margin-bottom: 9px;
+  font-size: 74px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.jumbotron p {
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+.jumbotron .btn-large {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 14px 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Posts
+------------------------------------------------- */
+.post {
+  margin-top: 20px;
+}
+.post h1 {
+  font-size: 40px;
+}
+.post p {
+  margin-top: 10px;
+  font-size: 18px;
+}

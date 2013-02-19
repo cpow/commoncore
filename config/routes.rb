@@ -3,9 +3,10 @@ Commoncore::Application.routes.draw do
     root :to => 'home#index'
   end
 
-  root :to => "landing#index"
+  root :to => "posts#index"
   devise_for :users
   resources :landing
+  resources :posts
   resources :core_standards do
     collection do
       get :specific_core_standard

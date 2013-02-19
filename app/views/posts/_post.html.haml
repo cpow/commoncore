@@ -1,0 +1,8 @@
+.post
+  %h1 
+    =link_to post.title, post_path(id: post.id)
+  %p
+    =post.body
+  %post_info
+    =post.created_at
+  %hr
