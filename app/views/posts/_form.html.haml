@@ -10,7 +10,7 @@
 
   .field
     = f.label :body
-    = f.cktext_area :body
+    = f.text_area :body, :class => "wysihtml5"
 
   .actions
     = f.submit 'Publish', :class => "btn btn-large"

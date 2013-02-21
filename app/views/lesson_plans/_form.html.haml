@@ -57,12 +57,13 @@
 
     .field
       = f.label :description
-      = f.cktext_area :description
+      = f.text_area :description, :class => "wysihtml5"
     .field
       = f.label :lesson_plan_file
       = f.file_field :lesson_plan_file
     .actions
-      = f.submit 'Save', :class => "btn btn-large btn-block"
+      = f.submit 'Save', :class => "btn btn-large btn-block btn-success"
+      = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-large btn-block"
 
 #my_modal.modal.hide.fade
   .modal-header

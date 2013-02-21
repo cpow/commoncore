@@ -4,5 +4,11 @@ User: #{link_to @user.name, @user}
 - @lesson_plans.each do |lesson_plan|
   %p
     lesson plan: #{link_to lesson_plan.name, user_lesson_plan_path(lesson_plan, current_user) if lesson_plan.name}
-
 =link_to "Create Lesson Plan", new_user_lesson_plan_path(current_user)
+
+%h3 #{link_to "Blog", posts_path}
+- @posts.each do |post|
+  %p
+    =link_to post.title, post_path(post)
+
+=link_to "Create a new post", new_user_post_path(current_user)
