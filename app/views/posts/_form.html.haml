@@ -1,16 +1,18 @@
-= form_for [:user, @post] do |f|
-  - if @post.errors.any?
-    %div{:class => "alert alert-error fade in"}
-      %a.close{"data-dismiss" => "alert"} ×
-      - @post.errors.full_messages.each do |msg|
-        = content_tag :div, msg, :id => "flash_errors"
-  .field
-    = f.label :title
-    = f.text_field :title
+.span9.offset1.well
+  = form_for [:user, @post] do |f|
+    - if @post.errors.any?
+      %div{:class => "alert alert-error fade in"}
+        %a.close{"data-dismiss" => "alert"} ×
+        - @post.errors.full_messages.each do |msg|
+          = content_tag :div, msg, :id => "flash_errors"
+    .field
+      = f.label :title
+      = f.text_field :title
 
-  .field
-    = f.label :body
-    = f.text_area :body, :class => "wysihtml5"
+    .field
+      = f.label :body
+      = f.text_area :body, :class => "wysihtml5", :style => "width:100%;"
 
-  .actions
-    = f.submit 'Publish', :class => "btn btn-large"
+    .actions
+      = f.submit 'Publish', :class => "btn btn-large btn-block btn-success"
+      = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-large btn-block"

@@ -1,4 +1,6 @@
 class CoreStandardsController < ApplicationController
+  before_filter :authenticate_user!
+
   def specific_core_standard
     @core_standards = CoreStandard.with_level_and_subject(params[:level], params[:subject])
 
