@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .landing {
+  padding-top: 20px;
+
   .hero-unit {
     position: relative;
     width: 100%;
@@ -51,10 +53,6 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-  }
-
-  body {
-    padding-top: 20px;
   }
 
   .btn {
