@@ -1,7 +1,16 @@
-.post_container
+.row
   .jumbotron
     %h1 
       =@post.title
     %hr
     %p
       =raw(@post.body)
+
+  %footer
+    %hr
+    .row
+      .span4
+        =render 'shared/about_section'
+      .span4
+      .span4
+        =render 'shared/beta_section'

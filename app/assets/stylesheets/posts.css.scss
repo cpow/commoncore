@@ -3,11 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts{
+  .post {
+    margin-top: 20px;
+  }
+  .post h1 {
+    font-size: 40px;
+  }
+  .post p {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .post_info {
+    color: #7491A3;
+  }
+
   .post_container {
     width: 760px;
   }
 
   .jumbotron {
     text-align: left;
+  }
+
+  aside {
+    display: inline-block;
+    padding-top: 60px;
+  }
+
+  footer {
+    padding-top: 50px;
   }
 }

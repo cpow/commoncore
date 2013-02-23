@@ -1,1 +1,10 @@
-=render @posts
+.row
+  .span8
+    .details.span7
+      =render @posts
+  %aside.span4
+    =render 'shared/about_section'
+    %hr
+    %br
+    =render 'shared/beta_section'
+      
