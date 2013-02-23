@@ -1,11 +1,11 @@
-.row
-  .span8
-    .details.span7
-      =render @posts
-    =will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "previous", next_label: "next"
-  %aside.span4
-    =render 'shared/about_section'
+.row.span8.offset1
+  .details
+    =render @posts
+  =will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "previous", next_label: "next"
+  %footer
     %hr
-    %br
-    =render 'shared/beta_section'
-    
+    .row
+      .span8
+        =render 'shared/about_section'
+      .span8
+        =render 'shared/beta_section'
