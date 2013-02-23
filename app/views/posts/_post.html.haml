@@ -1,12 +1,12 @@
 %h1 
   =link_to post.title, post_path(id: post.id)
-%p
-  =raw(post.body)
+.post_content
+  =truncate_html(post.body)
+%hr
 .post_info
   Created at:
   = post.created_at.to_formatted_s(:long)
   by:
   = post.user.name
-  =link_to "read more!", post_path(id: post.id), :class => "btn pull-right"
-%br
+  = link_to "read more!", post_path(id: post.id), :class => "btn pull-right"
 %hr

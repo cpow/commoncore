@@ -3,7 +3,7 @@
     %h1 
       =@post.title
     %hr
-    %p
+    .post_content
       =raw(@post.body)
 
     =link_to "Back to Posts", posts_path, :class => "btn pull-left"

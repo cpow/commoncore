@@ -249,6 +249,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.9.2)
     typhoeus (0.5.4)
       ethon (~> 0.5.7)
     tzinfo (0.3.35)
@@ -303,6 +304,7 @@ DEPENDENCIES
   sinon-rails
   terminal-notifier-guard
   thin (>= 1.5.0)
+  truncate_html
   typhoeus
   uglifier (>= 1.0.3)
   will_paginate-bootstrap

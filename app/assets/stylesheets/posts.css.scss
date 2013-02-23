@@ -4,21 +4,23 @@
 
 .posts{
   .post {
+
     margin-top: 20px;
   }
   .post h1 {
     font-size: 40px;
   }
-  .post p {
-    margin-top: 10px;
-    font-size: 20px;
-  }
+  .post 
   .post_info {
     color: #7491A3;
   }
 
-  .post_container {
-    width: 760px;
+  .post_content {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #4d4d4d;
   }
 
   .jumbotron {
