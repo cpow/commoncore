@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :post do
-    title "MyText"
-    body "MyText"
+    title "MyPost"
+    body "this is some text for a body"
+    after(:build){|p| p.user = FactoryGirl.create(:user)}
   end
 end

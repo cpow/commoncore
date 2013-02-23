@@ -6,13 +6,13 @@ describe "creating a new lesson plan" do
     grade_level
   end
 
-  it "should see link for creating a new lesson plan", js: true do
-    visit root_path
-    page.should have_link("Create Lesson Plan")
+  before(:each){visit root_path}
+
+  context "see link for creating a new lesson plan", js: true do
+     specify{page.should have_link("Create Lesson Plan")}
   end
 
-  it "should be able to create lesson plan from the form", js: true do
-    visit root_path
+  it "should create lesson plan from the form", js: true do
     click_link "Create Lesson Plan"
     fill_in "Name", with: Faker::Name.first_name
     click_link('K')
