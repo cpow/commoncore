@@ -7,4 +7,6 @@
     %hr
     %br
     =render 'shared/beta_section'
-      
+
+  .row
+    =will_paginate @posts, renderer: BootstrapPagination::Rails

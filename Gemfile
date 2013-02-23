@@ -39,3 +39,4 @@ gem "carrierwave"
 gem "pry", :group => [:development, :test]
 gem "rails_admin"
 gem 'bootstrap-wysihtml5-rails'
+gem 'will_paginate-bootstrap'

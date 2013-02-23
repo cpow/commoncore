@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  require 'will_paginate/array'
 
   def index
-    @posts = Post.all
+    @posts = Post.all.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
