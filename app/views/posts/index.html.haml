@@ -2,7 +2,7 @@
   .span8
     .details.span7
       =render @posts
-    =will_paginate @posts, renderer: BootstrapPagination::Rails
+    =will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "previous", next_label: "next"
   %aside.span4
     =render 'shared/about_section'
     %hr
