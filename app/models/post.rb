@@ -3,5 +3,4 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   validates :title, :body, :user_id, presence: true
-  WillPaginate.per_page = 5
 end

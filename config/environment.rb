@@ -5,3 +5,4 @@ require File.expand_path('../application', __FILE__)
 Commoncore::Application.initialize!
 
 require 'will_paginate'
+WillPaginate.per_page = 5

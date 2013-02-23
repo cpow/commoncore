@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   require 'will_paginate/array'
 
   def index
-    @posts = Post.all.paginate(page: params[:page])
+    @posts = Post.all(order: "created_at DESC").paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
