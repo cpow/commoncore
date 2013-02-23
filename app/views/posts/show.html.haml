@@ -1,4 +1,4 @@
-.row
+.row.span8.offset1
   .jumbotron
     %h1 
       =@post.title
@@ -6,11 +6,12 @@
     %p
       =raw(@post.body)
 
+    =link_to "Back to Posts", posts_path, :class => "btn pull-left"
+
   %footer
     %hr
     .row
-      .span4
+      .span8
         =render 'shared/about_section'
-      .span4
-      .span4
+      .span8
         =render 'shared/beta_section'
