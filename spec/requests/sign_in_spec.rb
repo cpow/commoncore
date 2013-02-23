@@ -4,6 +4,7 @@ describe "user sign in and sign up behavior" do
   describe "GET /" do
     context "when a user has not signed up yet" do
       it "should show sign up link and say 'welcome'" do
+        pending "waiting for beta to start"
         visit root_path
         page.should have_content("Sign up")
       end
@@ -11,6 +12,7 @@ describe "user sign in and sign up behavior" do
 
     context "when a user signs up" do
       it "should welcome them to the site" do
+        pending "waiting for beta to start"
         user = FactoryGirl.build :user
         visit root_path
         click_link "Sign up"
@@ -25,6 +27,7 @@ describe "user sign in and sign up behavior" do
 
     context "when a user signs in", js: true do
       it "should go to the home page for a user" do
+        pending "waiting for beta to start"
         user = FactoryGirl.create :user
         visit root_path
         click_link "Login"

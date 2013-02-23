@@ -5,7 +5,7 @@ Commoncore::Application.routes.draw do
     root :to => 'home#index'
   end
 
-  root :to => "posts#index"
+  root :to => "landing#index"
   devise_for :users
   resources :landing
   resources :posts do
