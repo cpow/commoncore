@@ -3,8 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts{
+  .tabbable {
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #4d4d4d;
+    }
+  }
   .post {
-
     margin-top: 20px;
   }
   .post h1 {
