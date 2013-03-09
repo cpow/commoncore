@@ -3,12 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts{
+  color: #4d4d4d;
   .tabbable {
     p {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: 1px;
-      color: #4d4d4d;
+    }
+    li {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 1px;
     }
   }
   .post {
@@ -27,9 +32,7 @@
     line-height: 30px;
     font-weight: 300;
     letter-spacing: 1px;
-    color: #4d4d4d;
   }
-
   .jumbotron {
     text-align: left;
   }

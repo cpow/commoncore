@@ -4,12 +4,23 @@
     %li.active
       =link_to "About", "#tab1", :data => {:toggle => "tab"}
     %li
-      =link_to "Contact", "#tab2", :data => {:toggle => "tab"}
+      =link_to "ClassAct Beta", "#tab2", :data => {:toggle => "tab"}
   .tab-content
     .tab-pane.active{:id => "tab1"}
       %p 
         Class act is where teachers come together to learn about and build on knowledge of the new Core Standards. Teachers also create, store, and sell their lesson plans for free! All lesson plans will easily adhere to the core standards. You will never have to worry about your lesson plans ever again!
-      =link_to "Lean More!", landing_index_path, :class => "btn pull-right"
+      %p
+        This app is currently being constructed. Be sure to check back often for updates and news.
+      =link_to "Lean More!", landing_index_path, :class => "btn pull-right btn-primary"
     .tab-pane{:id => "tab2"}
       %p
-        this is a section where we'll have some contact information for you
+        %h4 Would you like to:
+        %ul
+          %li Create Common Core lesson plans
+          %li Store your lesson plans in the cloud
+          %li share/sell your lesson plans to other teachers
+        %br
+        %h4 if so, you are in luck! 
+        %p 
+          We are hosting a beta for the classact application shortly. If you like, Please enter your email address and we'll contact you when the beta starts! (we will not spam you're email... we promise)
+      = render partial: "/leads/form"
