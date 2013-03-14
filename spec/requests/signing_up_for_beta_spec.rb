@@ -9,6 +9,7 @@ describe "user hit blog page and click to beta sign up" do
     fill_in "Email", :with => Faker::Internet.email
     click_button "Sign up"
     page.should have_content "Thank you for signing up for the classAct beta!"
+    Lead.all.count.should eql(1)
   end
 end
 
@@ -21,6 +22,7 @@ describe "user hit landing page and sign up for beta" do
     fill_in "Email", :with => Faker::Internet.email
     click_button "Sign up"
     page.should have_content "Thank you for signing up for the classAct beta!"
+    Lead.all.count.should eql(1)
   end
 end
 
