@@ -2,6 +2,7 @@
 .container
   .landing_content
     .row.span11.well
+      = render 'layouts/messages'
       %h1 Worried about lesson plans and core standards?
       %p{:style => "font-style:italic;"}
         classAct makes navigating Core State Standards easy, and (almost) fun.
@@ -10,7 +11,7 @@
         We are built by teachers, for teachers. Store your lesson plans online, link them to specific core standards, and sell them on our marketplace for other teachers to enjoy!
       %br
         = link_to 'Resources', posts_path, :class => "btn btn-large"
-        = link_to 'Lean More »', new_user_registration_path, :class => "btn btn-large btn-success"
+        = link_to 'Sign up for our Beta »', new_lead_path(lead_type: "beta_test"), :class => "btn btn-large btn-success"
       %hr
 
       %h1 Lesson Plans

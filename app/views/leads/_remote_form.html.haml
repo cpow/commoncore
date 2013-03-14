@@ -1,0 +1,11 @@
+= form_for [@lead = Lead.new()], :remote => true do |f|
+  %div{:class => "alert alert-error fade in", :id => "new_lead_errors", :style => "display:none;"}
+    = f.hidden_field :lead_type, :value => lead_type
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit 'Sign up!', :class => "btn btn-large btn-success"

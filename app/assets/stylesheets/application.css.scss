@@ -15,6 +15,12 @@
 
 @import "bootstrap";
 
+p, li {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
 .content {
   background-color: #eee;
   padding: 20px;

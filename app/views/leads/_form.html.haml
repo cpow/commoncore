@@ -1,5 +1,12 @@
-= form_for [@lead = Lead.new()], :remote => true do |f|
+= form_for [@lead] do |f|
   %div{:class => "alert alert-error fade in", :id => "new_lead_errors", :style => "display:none;"}
+  - if @lead.errors.any?
+    %div{:class => "alert alert-error fade in"}
+      %a.close{"data-dismiss" => "alert"} ×
+      - @lead.errors.full_messages.each do |msg|
+        = content_tag :div, msg, :id => "flash_errors"
+  = f.hidden_field :lead_type, value: lead_type
+
   .field
     = f.label :name
     = f.text_field :name
