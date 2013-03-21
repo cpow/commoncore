@@ -11,7 +11,7 @@ gem "thin", ">= 1.5.0"
 gem "pg", ">= 0.14.1"
 gem "haml", ">= 3.1.7"
 gem "typhoeus"
-gem "haml-rails", ">= 0.3.5", :group => :development
+gem "haml-rails", ">= 0.3.5"
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 3.1.1", :group => :development
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
