@@ -5,6 +5,7 @@
     %hr
     .post_content
       =raw(@post.body)
+    %br
 
     =link_to "Back to Posts", posts_path, :class => "btn pull-left"
 
@@ -12,6 +13,11 @@
     %hr
     .row
       .span8
-        =render 'shared/about_section'
+        %div{:id => "comments"}
+          %h2 Comments
+          %ul
+            = render @comments
+          = render partial: "comments/form" if user_signed_in?
+      %hr
       .span8
-        =render 'shared/beta_section'
+        =render 'shared/about_section'

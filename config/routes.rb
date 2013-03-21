@@ -5,13 +5,14 @@ Commoncore::Application.routes.draw do
   resources :leads
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'posts#index'
   end
 
   root :to => "landing#index"
   devise_for :users
   resources :landing
   resources :posts do
+    resources :comments
     get :index
     get :show
   end
@@ -22,6 +23,9 @@ Commoncore::Application.routes.draw do
   end
 
   resources :users do
+    resources :posts do
+      resources :comments
+    end
     resources :lesson_plans do
       resources :comments
     end

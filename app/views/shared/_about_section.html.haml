@@ -1,4 +1,3 @@
-%h1 Class Act Blog
 .tabbable
   %ul.nav.nav-tabs
     %li.active
@@ -23,4 +22,8 @@
         %h4 if so, you are in luck! 
         %p 
           We are hosting a beta for the classact application shortly. If you like, Please enter your email address and we'll contact you when the beta starts! (we will not spam you're email... we promise)
-      = render partial: "/leads/remote_form", locals: {lead_type: "beta_test"}
+      - if user_signed_in?
+        %div{:class => "alert alert-success"}
+          %p You already created an account, so you are automatically signed up for the beta!
+      - else
+        = render partial: "/leads/remote_form", locals: {lead_type: "beta_test"}

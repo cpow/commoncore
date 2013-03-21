@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :only_admin_user, :only => [:index]
 
   def find_commentable
     params.each do |name, value|
@@ -18,10 +19,12 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     @comment = @commentable.comments.build(params[:comment])
-     if @comment.save
-       redirect_to :id => nil, :notice => "Successfully saved comment"
-     else
-       render :action => 'new'
-     end
+    respond_to do |format|
+      if @comment.save
+        format.json {render json: @comment, status: :created, location: @comment}
+        format.js {@comment}
+      else
+      end
+    end
   end
 end

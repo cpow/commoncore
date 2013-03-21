@@ -1,0 +1,7 @@
+%h2 New Comment
+= form_for [current_user, @commentable, Comment.new], :remote => true do |f|
+  %div{:class => "alert alert-error fade in", :id => "new_comment_errors", :style => "display:none;"}
+  = f.label :content
+  = f.text_area :content
+  .actions
+    = f.submit
