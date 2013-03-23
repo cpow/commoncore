@@ -145,6 +145,7 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     nested_form (0.3.1)
+    newrelic_rpm (3.6.0.78)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
     pg (0.14.1)
@@ -291,6 +292,7 @@ DEPENDENCIES
   haml-rails (>= 0.3.5)
   hpricot (>= 0.8.6)
   jquery-rails
+  newrelic_rpm
   pg (>= 0.14.1)
   pry
   quiet_assets (>= 1.0.1)
