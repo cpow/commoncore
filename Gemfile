@@ -43,3 +43,4 @@ gem 'will_paginate-bootstrap'
 gem 'truncate_html'
 gem "newrelic_rpm"
 gem "omniauth"
+gem 'omniauth-stripe-connect'
