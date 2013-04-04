@@ -13,6 +13,11 @@ module RequestHelpers
   def login(user)    
     login_as user, scope: :user
   end
+
+  def create_logged_in_user_with_lesson_plan
+    user = create_logged_in_user
+    FactoryGirl.create :lesson_plan, user: user
+  end
 end
 
 RSpec.configure{|config| config.include RequestHelpers}

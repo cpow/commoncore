@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   has_many :lesson_plans
   has_many :posts
+  has_many :products
 end

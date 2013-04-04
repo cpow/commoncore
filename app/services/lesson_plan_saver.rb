@@ -15,9 +15,7 @@ class LessonPlanSaver
 
     def add_core_standards_from_params
       unless @params[:core_standard_ids].blank?
-        @params[:core_standard_ids].each do |id|
-          @lesson_plan.core_standards << CoreStandard.find(id)
-        end
+        @params[:core_standard_ids].each{|id| @lesson_plan.core_standards << CoreStandard.find(id)}
       end
     end
 end
