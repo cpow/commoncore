@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313200441) do
+ActiveRecord::Schema.define(:version => 20130404121552) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(:version => 20130313200441) do
     t.integer  "user_id"
   end
 
+  create_table "products", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "productable_type"
+    t.integer  "productable_id"
+    t.decimal  "price"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -105,6 +114,12 @@ ActiveRecord::Schema.define(:version => 20130313200441) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "stripe_auths", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -13,3 +13,5 @@ ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: please
 ROLES: [admin, user, VIP]
+STRIPE_CONNECT_CLIENT_ID: ca_1aNNTL8a4ql9VaTQFpEvst09xJFG1N0d
+STRIPE_SECRET: sk_test_ZQ59snxOIN6fgyu9jyq5w28i
