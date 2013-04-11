@@ -24,8 +24,15 @@ describe OmniauthCallbackCreator do
     }
 
   subject{OmniauthCallbackCreator.new({params: stripe_connect_params, user: user})}
+
   describe ".new" do
     specify{subject.user.should eql(user)}
     specify{subject.params.should eql(stripe_connect_params)}
+    specify{subject.should respond_to(:create)}
+
+    describe "#create" do
+      before{subject.create}
+      specify{StripeConnect.count.should eql(1)}
+    end
   end
 end

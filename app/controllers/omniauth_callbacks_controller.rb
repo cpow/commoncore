@@ -1,5 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def stripe_connect
-    @callback = request.env["omniauth.auth"].to_yaml
+    callback = OmniauthCallbackCreator.new({user: current_user, \
+      params: request.env["omniauth.auth"]})
   end
 end

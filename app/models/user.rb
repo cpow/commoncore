@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   has_many :lesson_plans
   has_many :posts
   has_many :products
-  has_one :stripe_auth
+  has_one :stripe_connect
 end
