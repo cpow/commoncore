@@ -5,14 +5,15 @@ class OmniauthCallbackCreator
     @user = opts[:user]
   end
 
-  def create
-    send(@params[:provider])
+  def save
+    @object = send(@params[:provider])
+    @object.save
   end
 
   private
 
     def stripe_connect
-      StripeConnect.create!(
+      StripeConnect.new(
         user_id: @user.id,
         uid: @params[:uid],
         scope: @params[:info][:scope],

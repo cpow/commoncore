@@ -31,6 +31,7 @@ describe OmniauthCallbackCreator do
     specify{subject.should respond_to(:create)}
 
     describe "#create" do
+      specify{subject.create.should be_true}
       before{subject.create}
       specify{StripeConnect.count.should eql(1)}
     end
