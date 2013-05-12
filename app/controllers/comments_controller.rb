@@ -1,23 +1,13 @@
 class CommentsController < ApplicationController
   before_filter :only_admin_user, :only => [:index]
 
-  def find_commentable
-    params.each do |name, value|
-      if name =~ /(.+)_id$/
-        commentable_object = $1.classify.constantize.find(value)
-        return commentable_object if commentable_object.respond_to?(:comments)
-      end
-    end
-    nil
-  end
-
   def index
-    @commentable = find_commentable
+    @commentable = PolymorphicObjectBuilder.new(params, "comments").find_polymorphic_object
     @comments = @commentable.comments
   end
 
   def create
-    @commentable = find_commentable
+    @commentable = PolymorphicObjectBuilder.new(params, "comments").find_polymorphic_object
     @comment = @commentable.comments.build(params[:comment])
     respond_to do |format|
       if @comment.save

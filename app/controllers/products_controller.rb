@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-    @product.build
+    @productable = PolymorphicObjectBuilder.new(params, "product").find_polymorphic_object
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +38,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    @productable = PolymorphicObjectBuilder.new(params, "product").find_polymorphic_object
+    @product = @productable.products.build(params[:product])
   end
 
 end

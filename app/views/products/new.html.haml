@@ -1,0 +1,8 @@
+%h1 You are making this sellable!!
+%h2 New Product!
+
+= form_for [current_user, @productable, Product.new] do |f|
+  %div{:class => "alert alert-error fade in", :id => "new_product_errors", :style => "display:none;"}
+  = f.hidden_field :user_id, :value => current_user.id
+  .actions
+    = f.submit

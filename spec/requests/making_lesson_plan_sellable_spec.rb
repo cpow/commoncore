@@ -1,12 +1,15 @@
 require 'spec_helper'
 describe "making lesson plan sellable" do
-  let(:lesson_plan){FactoryGirl.create(:lesson_plan, user: @user)}
+  let(:user){create_logged_in_user}
+  let(:stripe_connect){FactoryGirl.create(:stripe_connect, user_id: user.id)}
+  let(:lesson_plan){FactoryGirl.create(:lesson_plan, user: user)}
+
   before(:each) do
-    @user = create_logged_in_user
     lesson_plan
+    stripe_connect
   end
 
-  before(:each){visit user_lesson_plans_path(User.first)}
+  before(:each){visit user_lesson_plans_path(user)}
 
   it "should show us the index of lesson plans" do
     page.should have_content("Listing lesson_plans")

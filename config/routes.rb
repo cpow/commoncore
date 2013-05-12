@@ -25,14 +25,13 @@ Commoncore::Application.routes.draw do
 
   resources :users do
     resources :posts do
+      get :new
+      post :create
       resources :comments
     end
     resources :lesson_plans do
+      resources :products
       resources :comments
-    end
-    resources :posts do
-      get :new
-      post :create
     end
   end
 end

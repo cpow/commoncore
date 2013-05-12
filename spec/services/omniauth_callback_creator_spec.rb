@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe OmniauthCallbackCreator do
   let(:user){FactoryGirl.create(:user)}
   let(:stripe_connect_params){
@@ -28,11 +27,11 @@ describe OmniauthCallbackCreator do
   describe ".new" do
     specify{subject.user.should eql(user)}
     specify{subject.params.should eql(stripe_connect_params)}
-    specify{subject.should respond_to(:create)}
+    specify{subject.should respond_to(:save)}
 
-    describe "#create" do
-      specify{subject.create.should be_true}
-      before{subject.create}
+    describe "#save" do
+      specify{subject.save.should be_true}
+      before{subject.save}
       specify{StripeConnect.count.should eql(1)}
     end
   end
