@@ -6,11 +6,12 @@
       =link_to "ClassAct Beta", "#tab2", :data => {:toggle => "tab"}
   .tab-content
     .tab-pane.active{:id => "tab1"}
-      %p 
-        Class act is where teachers come together to learn about and build on knowledge of the new Core Standards. Teachers also create, store, and sell their lesson plans for free! All lesson plans will easily adhere to the core standards. You will never have to worry about your lesson plans ever again!
-      %p
-        This app is currently being constructed. Be sure to check back often for updates and news.
-      =link_to "Lean More!", landing_index_path, :class => "btn pull-right btn-primary"
+      =cache("static_about") do
+        %p
+          Class act is where teachers come together to learn about and build on knowledge of the new Core Standards. Teachers also create, store, and sell their lesson plans for free! All lesson plans will easily adhere to the core standards. You will never have to worry about your lesson plans ever again!
+        %p
+          This app is currently being constructed. Be sure to check back often for updates and news.
+        =link_to "Lean More!", landing_index_path, :class => "btn pull-right btn-primary"
     .tab-pane{:id => "tab2"}
       %p
         %h4 Would you like to:

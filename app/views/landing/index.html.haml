@@ -3,36 +3,37 @@
   .landing_content
     .row.span11.well
       = render 'layouts/messages'
-      %h1 Worried about lesson plans and core standards?
-      %p{:style => "font-style:italic;"}
-        classAct makes navigating Core State Standards easy, and (almost) fun.
-      %hr
-      %p{:style => "font-weight:500;"}
-        We are built by teachers, for teachers. Store your lesson plans online, link them to specific core standards, and sell them on our marketplace for other teachers to enjoy!
-      %br
-        = link_to 'Resources', posts_path, :class => "btn btn-large"
-        = link_to 'Sign up for our Beta »', new_lead_path(lead_type: "beta_test"), :class => "btn btn-large btn-success"
-      %hr
+      = cache("static_landing") do
+        %h1 Worried about lesson plans and core standards?
+        %p{:style => "font-style:italic;"}
+          classAct makes navigating Core State Standards easy, and (almost) fun.
+        %hr
+        %p{:style => "font-weight:500;"}
+          We are built by teachers, for teachers. Store your lesson plans online, link them to specific core standards, and sell them on our marketplace for other teachers to enjoy!
+        %br
+          = link_to 'Resources', posts_path, :class => "btn btn-large"
+          = link_to 'Sign up for our Beta »', new_lead_path(lead_type: "beta_test"), :class => "btn btn-large btn-success"
+        %hr
 
-      %h1 Lesson Plans
-      %hr
-      %p
-        %ul
-          %li
-            Never worry about losing your lesson plans again. Store them for free on our cloud service, and always have them ready every year.
-          %li
-            Link your lesson plans with specific Core State Standards. Now you can easily link your lesson plans with the upcoming core standards for your state.
-          %li
-            Make money selling your lesson plans! Are you great at creating content? you can easily generate income on the side by selling your plans for other teachers to enjoy.
-      %hr
+        %h1 Lesson Plans
+        %hr
+        %p
+          %ul
+            %li
+              Never worry about losing your lesson plans again. Store them for free on our cloud service, and always have them ready every year.
+            %li
+              Link your lesson plans with specific Core State Standards. Now you can easily link your lesson plans with the upcoming core standards for your state.
+            %li
+              Make money selling your lesson plans! Are you great at creating content? you can easily generate income on the side by selling your plans for other teachers to enjoy.
+        %hr
 
-      %h1 Core Standards
-      %hr
-      %p
-        %ul
-          %li
-            The Common Core State Standards are being implemented across the united states. You can be ahead of the curve, and create lesson plans and content that easily integrate with these standards.
+        %h1 Core Standards
+        %hr
+        %p
+          %ul
+            %li
+              The Common Core State Standards are being implemented across the united states. You can be ahead of the curve, and create lesson plans and content that easily integrate with these standards.
 
-          %li
-            With our easy to use Lesson Plan builder, you will be creating lesson plans in no time that immediately relate to specific core standards.
-      = link_to 'Lean More »', new_user_registration_path, :class => "btn btn-large btn-block"
+            %li
+              With our easy to use Lesson Plan builder, you will be creating lesson plans in no time that immediately relate to specific core standards.
+        = link_to 'Lean More »', new_user_registration_path, :class => "btn btn-large btn-block"

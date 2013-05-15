@@ -39,7 +39,17 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @productable = PolymorphicObjectBuilder.new(params, "product").find_polymorphic_object
-    @product = @productable.products.build(params[:product])
+    @product = Product.new(productable_type: @productable.class.name.underscore, productable_id: @productable.id, price: params[:product][:price], user_id: params[:product][:user_id])
+
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to polymorphic_url(@productable), notice: 'Product was successfully created.' }
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 end

@@ -44,3 +44,5 @@ gem 'truncate_html'
 gem "newrelic_rpm"
 gem "omniauth"
 gem 'omniauth-stripe-connect'
+gem 'rack-mini-profiler'
+gem 'cache_digests'

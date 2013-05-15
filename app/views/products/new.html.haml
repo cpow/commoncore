@@ -4,5 +4,7 @@
 = form_for [current_user, @productable, Product.new] do |f|
   %div{:class => "alert alert-error fade in", :id => "new_product_errors", :style => "display:none;"}
   = f.hidden_field :user_id, :value => current_user.id
+  = f.label :price
+  = f.number_field :price
   .actions
     = f.submit

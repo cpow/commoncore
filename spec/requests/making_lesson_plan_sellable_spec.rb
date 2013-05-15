@@ -21,5 +21,9 @@ describe "making lesson plan sellable" do
 
   it "should have a link to make sellable" do
     page.should have_link("Sell Lesson Plan")
+    click_link("Sell Lesson Plan")
+    fill_in "Price", with: "1.00"
+    click_button('Create Product')
+    page.should have_content("Product was successfully created")
   end
 end

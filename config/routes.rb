@@ -4,6 +4,8 @@ Commoncore::Application.routes.draw do
   devise_scope :user do match '/auth/stripe_connect/callback' => 'omniauth_callbacks#stripe_connect' end
 
   resources :leads
+  
+  match 'posts/page/:page' => 'posts#index'
 
   authenticated :user do
     root :to => 'posts#index'
