@@ -46,3 +46,4 @@ gem "omniauth"
 gem 'omniauth-stripe-connect'
 gem 'rack-mini-profiler'
 gem 'cache_digests'
+gem 'dalli'
