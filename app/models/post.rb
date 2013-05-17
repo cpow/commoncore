@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   after_commit :flush_cache
 
   def self.cached_index
-   Rails.cache.fetch([name, "cached_index"]){Post.all(order: "created_at DESC")}
+    Rails.cache.fetch([name, "index"]){all(order: "created_at DESC")}
   end
 
   def cached_user
@@ -22,6 +22,7 @@ class Post < ActiveRecord::Base
 
   def flush_cache
     Rails.cache.delete([self.class.name, id])
+    Rails.cache.delete([self.class.name, "index"])
   end
 
   def cached_comments
