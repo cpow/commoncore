@@ -4,7 +4,7 @@ Commoncore::Application.routes.draw do
   devise_scope :user do match '/auth/stripe_connect/callback' => 'omniauth_callbacks#stripe_connect' end
 
   resources :leads
-  
+
   match 'posts/page/:page' => 'posts#index'
 
   authenticated :user do
@@ -32,7 +32,7 @@ Commoncore::Application.routes.draw do
       resources :comments
     end
     resources :lesson_plans do
-      resources :products
+      resources :products, only: [:new, :create]
       resources :comments
     end
   end
