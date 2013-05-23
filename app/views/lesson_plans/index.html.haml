@@ -1,4 +1,6 @@
 %h1 Listing lesson_plans
+%span{data: {stripe_connect: "#{current_user.stripe_connect.present?}"}}
+  =link_to 'Connect with Stripe', auth_stripe_connect_callback_path unless current_user.stripe_connect.present?
 
 %table
   %tr
@@ -18,7 +20,8 @@
       %td= link_to 'Show', user_lesson_plan_path(lesson_plan, current_user)
       %td= link_to 'Edit', edit_user_lesson_plan_path(lesson_plan, current_user)
       %td= link_to 'Destroy', user_lesson_plan_path(lesson_plan, current_user), method: :delete, data: { confirm: 'Are you sure?' }
-      %td= link_to 'Sell Lesson Plan', new_user_lesson_plan_product_path(lesson_plan, current_user) if current_user.stripe_connect.present?
+      -if current_user.stripe_connect.present?
+        %td= link_to 'Sell Lesson Plan', new_user_lesson_plan_product_path(lesson_plan, current_user)
 
 %br
 

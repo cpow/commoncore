@@ -1,28 +1,21 @@
 require "spec_helper"
 
-describe PolymorphicObjectBuilder do
+describe PolymorphicObjectBuilder, '#find_polymorphic_object' do
+  it 'should find the polymorphic object after being instantiated' do
+    user = create_logged_in_user
+    lesson_plan = create :lesson_plan, user: user
 
-  let(:lesson_plan){FactoryGirl.create(:lesson_plan, user: user)}
-  let(:user){create_logged_in_user}
+    product_params = {
+     action: "new",
+     controller: "product",
+     user_id: user.id,
+     lesson_plan_id: lesson_plan.id
+    }
 
-  before(:each){lesson_plan}
+    object_builder = PolymorphicObjectBuilder.new product_params, "products"
 
-  let(:product_params){
-   { action: "new",
-   controller: "product",
-   user_id: user.id,
-   lesson_plan_id: lesson_plan.id}
-  }
-
-  subject{PolymorphicObjectBuilder.new(product_params, "product")}
-
-  describe ".new" do
-    specify{subject.params.should eql(product_params)}
-    specify{subject.method.should eql("product")}
+    expect(object_builder.params).to eq product_params
+    expect(object_builder.method).to eq "products"
+    expect(object_builder.find_polymorphic_object).to eq lesson_plan
   end
-  
-  describe ".find_polymorphic_object" do
-    specify{subject.find_polymorphic_object.should eql(lesson_plan)}
-  end
-
 end

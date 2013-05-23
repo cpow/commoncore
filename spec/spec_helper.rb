@@ -13,6 +13,7 @@ Capybara.javascript_driver = :webkit
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
   config.include Features, type: :feature
   config.include SpecHelpers
@@ -40,6 +41,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before :suite do
+    Rails.cache.clear
     DatabaseCleaner.strategy = :truncation
   end
   config.before :each do
