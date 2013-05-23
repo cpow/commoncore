@@ -13,6 +13,11 @@ Capybara.javascript_driver = :webkit
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+  config.include Capybara::DSL
+  config.include Features, type: :feature
+  config.include SpecHelpers
+  config.include Warden::Test::Helpers
+  config.include RSpec::Rails::RequestExampleGroup, type: :feature
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   # ## Mock Framework
@@ -33,14 +38,15 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-  
-  config.before(:suite) do
+
+  config.before :suite do
     DatabaseCleaner.strategy = :truncation
   end
-  config.before(:each) do
+  config.before :each do
+    Rails.cache.clear
     DatabaseCleaner.start
   end
-  config.after(:each) do
+  config.after :each do
     DatabaseCleaner.clean
   end
 end

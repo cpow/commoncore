@@ -14,8 +14,4 @@ module DeviseHelper
 
     html.html_safe
   end
-
-  def current_user
-    @user || User.cached_find(session["warden.user.user.key"][1][0])
-  end
 end

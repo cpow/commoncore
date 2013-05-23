@@ -1,8 +1,7 @@
-# spec/support/request_helpers.rb
 require 'spec_helper'
-include Warden::Test::Helpers
 
-module RequestHelpers
+
+module SpecHelpers
   def create_logged_in_user
     user = FactoryGirl.create :user
     user.add_role :admin
@@ -19,5 +18,3 @@ module RequestHelpers
     FactoryGirl.create :lesson_plan, user: user
   end
 end
-
-RSpec.configure{|config| config.include RequestHelpers}

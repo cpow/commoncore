@@ -5,7 +5,7 @@ Commoncore::Application.configure do
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
-  config.cache_classes = false
+  config.cache_classes = true
 
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
@@ -34,7 +34,7 @@ Commoncore::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
-  
+  #
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'example.com' }
 
