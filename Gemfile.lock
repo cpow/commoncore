@@ -169,6 +169,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
+    oj (2.0.14)
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
@@ -326,7 +327,10 @@ DEPENDENCIES
   haml-rails (>= 0.3.5)
   hpricot (>= 0.8.6)
   jquery-rails
+  json
+  multi_json (~> 1.7.2)
   newrelic_rpm
+  oj
   omniauth
   omniauth-stripe-connect
   pg (>= 0.14.1)

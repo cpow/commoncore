@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :authenticate_blogger!, :except => [:index, :show]
   require 'will_paginate/array'
+
+  def authenticate_blogger!
+    unless current_user.has_role?(:blogger)
+      redirect_to root_path, notice: "You are not authorized for this action"
+    end
+  end
 
   def index
     @posts = Post.cached_index.paginate(page: params[:page])

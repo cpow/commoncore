@@ -31,6 +31,7 @@ Commoncore::Application.routes.draw do
       post :create
       resources :comments
     end
+    resources :home, only: [:index]
     resources :lesson_plans do
       resources :products, only: [:new, :create]
       resources :comments

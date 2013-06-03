@@ -7,6 +7,9 @@ gem 'pry', :group => [:test, :development]
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "pg", ">= 0.14.1"
+gem 'json'
+gem 'oj'
+gem 'multi_json', '~>1.7.2'
 gem "haml", ">= 3.1.7"
 gem "typhoeus"
 gem "haml-rails", ">= 0.3.5"
