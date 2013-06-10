@@ -4,7 +4,6 @@ require 'spec_helper'
 module SpecHelpers
   def create_logged_in_user
     user = FactoryGirl.create :user
-    user.add_role :admin
     login(user)
     user
   end
