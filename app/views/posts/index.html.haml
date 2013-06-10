@@ -6,7 +6,7 @@
       %hr
   .details
     =render @posts
-  =will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "previous", next_label: "next"
+  =will_paginate @posts, previous_label: "previous", next_label: "next"
   %footer
     %hr
     .row

@@ -20,7 +20,6 @@ gem "capybara", '~> 2.1.0', :group => :test
 gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.2.2.0"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
@@ -40,7 +39,7 @@ gem "carrierwave"
 gem "pry", :group => [:development, :test]
 gem "rails_admin"
 gem 'bootstrap-wysihtml5-rails'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate', '~>3.0.0'
 gem 'truncate_html'
 gem "newrelic_rpm"
 gem "omniauth"
