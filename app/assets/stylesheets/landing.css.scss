@@ -1,97 +1,171 @@
-// Place all the styles related to the landing controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .landing {
-  padding-top: 20px;
-  background: #ddd;
+  $teal: #41A0BD;
+  $orange: #F7941D;
+  font-family: helvetica;
+  margin: 0;
 
-  .hero-unit {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    color: #005580;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background: white url(class_raising_hands.jpg) repeat-x;
+  a {
+    font-weight: 700;
+  }
 
-    h1 {
-      overflow: hidden;
-      position: absolute;
-      left: 0;
-      bottom: 100px;
-      display: inline-block;
-      color: #0088cc;
-      background-color: rgb(0, 0, 0);
-      /* RGBa with 0.6 opacity */
-      background-color: rgba(0, 0, 0, 0.6);
-      /* For IE 5.5 - 7*/
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-      /* For IE 8*/
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-    }
-    span {
-      overflow: hidden;
-      position: absolute;
-      left: 0;
-      bottom: 65px;
-      display: inline-block;
-      min-width: 150px;
-      max-width: 940px;
+  hr {
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+
+  .landing_header {
+    padding-top: 60px;
+    margin-bottom: 60px;
+    background: #41A0BD;
+    .landing_header_content {
       color: white;
-      background-color: rgb(0, 0, 0);
-      /* RGBa with 0.6 opacity */
-      background-color: rgba(0, 0, 0, 0.6);
-      /* For IE 5.5 - 7*/
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-      /* For IE 8*/ 
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      @include outer-container;
+      h1 {
+        font-weight: 300;
+        & strong {
+          font-weight: 700;
+        }
+        font-family: 'Roboto Slab', serif;
+        font-size: 50px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        max-width: flex-grid(6);
+        font-size: 26px;
+        color: rgba(white, 0.7);
+        font-weight: 200;
+        margin-top: 0px;
+      }
     }
+  }
 
-    .btn {
-      position: absolute;
-      left: 0;
-      bottom: 10px;
+  ul.buttons {
+    padding-bottom: 60px;
+    margin: 0;
+    padding-left: 0;
+    @include shift(6);
+    @include row();
+    li {
+      @include span-columns(3 6);
+    }
+  }
+
+  img {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+  }
+
+  .btn {
+    font-family: 'Roboto Slab', serif;
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    &.dark {
+      background: #474747;
+    }
+    &.green {
+      background: #00CC00;
+    }
+    &.orange {
+      border: 1px darken($orange, 10) solid;
+      background: $orange;
+    }
+    &.light {
+      border: 1px darken($teal, 15) solid;
+      background: darken($teal, 10);
+    }
+    &:hover {
+      color: #ddd;
     }
   }
 
   .landing_content {
-    .well {
-      position: absolute;
-      background: white;
-      top: 400px;
-      text-align: center;
-    }
-
-    h1 {
-      text-align: center;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: #4d4d4d;
-    }
-
+    @include outer-container;
     p {
-      font-size: 24px;
-      line-height: 30px;
+      line-height: 1.6em;
+      font-weight: 200;
+      font-size: 18px;
+      color: #7d7d7d;
+      &.left {
+        margin-top: 0;
+        @include span-columns(6);
+      }
+      &.right {
+        max-width: flex-grid(6);
+        @include shift(6);
+      }
+    }
+    h3 {
+      margin-top: 0;
+      font-family: 'Roboto Slab', serif;
       font-weight: 300;
-      letter-spacing: 1px;
-      color: #4d4d4d; 
+      color: #4d4d4d;
+      text-align: center;
+      font-size: 26px;
+      & strong {
+        font-weight: 700;
+        color: darken($teal, 10);
+      }
+    }
+    h4 {
+      font-decoration: underline;
+      font-family: 'Roboto Slab', serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #4d4d4d;
     }
 
     ul {
-      display: block;
-      text-align: left;
-      padding-left: 20px;
+      margin: 0;
+      padding-left: 0;
+      @include row();
+      img {
+        width: 100%
+      }
+      li {
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 1.6em;
+        color: #7d7d7d;
+        @include span-columns(3);
+        &.double {
+          @include shift(3);
+        }
+      }
     }
-    
+  }
+
+  .navbar {
+    @include outer-container;
+  }
+  .nav {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    padding: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    a {
+      color: $orange;
+      text-decoration: none;
+      &:hover {
+        color: darken($teal, 10);
+      }
+    }
     li {
-      padding: 10px;
-      font-size: 24px;
-      line-height: 30px;
-      font-weight: 300;
-      letter-spacing: 1px;
-      color: #4d4d4d;
+      padding-right: 20px;
+      display: inline;
+      text-decoration: none;
     }
+  }
+
+  .icon-cog-alt {
+    font-size: 100px;
   }
 }

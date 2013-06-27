@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'fontello';
+  src: url(font-path('fontello.eot?30160567'));
+  src: url(font-path('fontello.eot?30160567#iefix')) format('embedded-opentype'),
+       url(font-path('fontello.woff?30160567')) format('woff'),
+       url(font-path('fontello.ttf?30160567')) format('truetype'),
+       url(font-path('fontello.svg?30160567#fontello')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+$teal: #41A0BD;
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url(font-path('fontello.svg?30160567#fontello')) format('svg');
+  }
+}
+*/
+ 
+ %icon-base {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100px;
+  color: $teal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+%icon-cog-alt:before { @extend %icon-base; content: '\e800'; } /* '' */
+%icon-ok-circled:before { @extend %icon-base; content: '\e804'; } /* '' */
+%icon-ok-circled2:before { @extend %icon-base; content: '\e805'; } /* '' */
+%icon-basket:before { @extend %icon-base; content: '\e802'; } /* '' */
+%icon-ok-squared:before { @extend %icon-base; content: '\e803'; } /* '' */
+%icon-users:before { @extend %icon-base; content: '\e806'; } /* '' */
+%icon-floppy:before { @extend %icon-base; content: '\e807'; } /* '' */
+%icon-wrench:before { @extend %icon-base; content: '\e801'; } /* '' */
+
+.icon-cog-alt { @extend %icon-cog-alt; }
+.icon-ok-circled { @extend %icon-ok-circled; }
+.icon-ok-circled2 { @extend %icon-ok-circled2; }
+.icon-basket { @extend %icon-basket; }
+.icon-ok-squared { @extend %icon-ok-squared; }
+.icon-users { @extend %icon-users; }
+.icon-floppy { @extend %icon-floppy; }
+.icon-wrench { @extend %icon-wrench; }
