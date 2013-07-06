@@ -29,5 +29,5 @@ class Scroller
 $ ->
   $(document).on 'ready', ->
     scroller = new Scroller($('.icons_top'), $('.icons_bottom'), $('.icons_top').height(), $('.icons_bottom').height(), false, false)
-    scroller.check_scroll()
+    #scroller.check_scroll()
     scroller.slow_fade($('ul.buttons'))
