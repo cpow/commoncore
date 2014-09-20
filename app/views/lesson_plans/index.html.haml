@@ -2,7 +2,7 @@
 %span{data: {stripe_connect: "#{current_user.stripe_connect.present?}"}}
   =link_to 'Connect with Stripe', auth_stripe_connect_callback_path unless current_user.stripe_connect.present?
 
-%table
+%table.lesson-plans
   %tr
     %th Name
     %th Description
