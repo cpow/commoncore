@@ -19,6 +19,9 @@ Commoncore::Application.routes.draw do
     get :index
     get :show
   end
+
+  resources :lesson_plan_dashboard
+
   resources :core_standards do
     collection do
       get :specific_core_standard

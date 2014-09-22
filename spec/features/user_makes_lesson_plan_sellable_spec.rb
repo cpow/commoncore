@@ -1,6 +1,6 @@
 require 'spec_helper'
 feature "making lesson plan sellable" do
-  scenario 'navigating to lesson plan index' do
+  pending 'navigating to lesson plan index' do
     user = create_logged_in_user
     stripe_connect = create :stripe_connect, user_id: user.id
     lesson_plan = create :lesson_plan, user: user

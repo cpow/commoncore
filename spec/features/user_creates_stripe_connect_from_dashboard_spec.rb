@@ -2,14 +2,14 @@ require 'spec_helper'
 
 
 feature 'User creates stripe connect from dashboard' do
-  scenario 'links account up with stripe connect to sell items' do
+  pending 'links account up with stripe connect to sell items' do
     user = create_logged_in_user
     visit user_lesson_plans_path(user)
 
     expect(page).to have_css '[data-stripe-connect="false"]'
   end
 
-  scenario 'user already created a stripe connect account' do
+  pending 'user already created a stripe connect account' do
     user = create_logged_in_user
     stripe_connect_params = {
       "provider"=>"stripe_connect",

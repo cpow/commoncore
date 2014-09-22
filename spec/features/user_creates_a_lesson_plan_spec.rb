@@ -16,6 +16,7 @@ feature 'User creates a new lesson plan' do
     fill_in_html 'lesson_plan_description', with: 'Test body'
     attach_file 'Lesson plan file', "#{Rails.root}/spec/fixtures/files/test_file.txt"
     click_button 'Save'
+
     expect(page).to have_content 'Lesson plan was successfully created'
   end
 end
