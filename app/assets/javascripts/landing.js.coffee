@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $(".hero-unit.landing").backstretch(image_path("class_raising_hands.jpg"))
+  $(".landing").backstretch(image_path("class_raising_hands.jpg"))
