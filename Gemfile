@@ -5,6 +5,7 @@ gem 'coffee-rails', '~> 3.2.1'
 gem 'uglifier', '>= 1.0.3'
 gem 'pry', :group => [:test, :development]
 gem 'jquery-rails'
+gem 'shoulda-matchers', group: :test, require: false
 gem "thin", ">= 1.5.0"
 gem "pg", ">= 0.14.1"
 gem 'json'

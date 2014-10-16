@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411013001) do
+ActiveRecord::Schema.define(:version => 20141016002300) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -57,9 +57,12 @@ ActiveRecord::Schema.define(:version => 20130411013001) do
     t.string   "name"
     t.string   "description"
     t.string   "lesson_plan_file"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "user_id"
+    t.text     "objectives",       :default => ""
+    t.text     "agenda",           :default => ""
+    t.text     "materials",        :default => ""
   end
 
   create_table "lesson_plans_core_standards", :id => false, :force => true do |t|

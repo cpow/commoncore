@@ -3,6 +3,9 @@
 FactoryGirl.define do
   factory :lesson_plan do
     name Faker::Name.first_name
+    agenda Faker::Name.first_name
+    materials Faker::Name.first_name
+    objectives Faker::Name.first_name
     description "this is a string for content in a description"
     lesson_plan_file {fixture_file_upload("#{Rails.root}/spec/fixtures/files/test_file.txt", 'files/lesson_plan')}
     association :user, :factory => :user
