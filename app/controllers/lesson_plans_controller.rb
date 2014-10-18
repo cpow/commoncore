@@ -49,7 +49,7 @@ class LessonPlansController < ApplicationController
 
     respond_to do |format|
       if lesson_plan_saver.save
-        format.html { redirect_to root_path, notice: 'Lesson plan was successfully created.' }
+        format.html { redirect_to user_lesson_plans_path(current_user.id), notice: 'Lesson plan was successfully created.' }
         format.json { render json: @lesson_plan, status: :created, location: @lesson_plan }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ class LessonPlansController < ApplicationController
 
     respond_to do |format|
       if @lesson_plan.update_attributes(params[:lesson_plan])
-        format.html { redirect_to root_path, notice: 'Lesson plan was successfully updated.' }
+        format.html { redirect_to lesson_plans_path, notice: 'Lesson plan was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

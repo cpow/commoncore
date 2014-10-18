@@ -6,9 +6,10 @@
   %p
     %b Description:
     = @lesson_plan.description
+
   %p
     %b Lesson plan file:
-    = @lesson_plan.lesson_plan_file
+    = link_to("click here", @lesson_plan.lesson_plan_file.url)
 
   %p
     %b Agenda:
