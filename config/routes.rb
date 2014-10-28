@@ -1,5 +1,6 @@
 Commoncore::Application.routes.draw do  devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "omniauth_callbacks"}
   devise_scope :user do match '/auth/stripe_connect/callback' => 'omniauth_callbacks#stripe_connect' end
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :leads
 
