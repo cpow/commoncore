@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.10'
-gem 'sass-rails',   '~> 3.2.3'
+gem 'sass-rails'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'uglifier', '>= 1.0.3'
 gem 'pry', :group => [:test, :development]
@@ -14,6 +14,9 @@ gem 'multi_json', '~>1.7.2'
 gem "haml", ">= 3.1.7"
 gem "typhoeus"
 gem "haml-rails", ">= 0.3.5"
+gem 'rails_admin',
+  git: 'https://github.com/sumitag/rails_admin.git',
+  branch: 'my_backported_branch'
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 3.1.1", :group => :development
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
@@ -21,7 +24,7 @@ gem "capybara", '~> 2.1.0', :group => :test
 gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.2.2.0"
+gem "bootstrap-sass"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
@@ -39,7 +42,6 @@ gem "capybara-webkit", :group => :test
 gem "faker", :group => [:development, :test]
 gem "carrierwave"
 gem "pry", :group => [:development, :test]
-gem "rails_admin"
 gem 'bootstrap-wysihtml5-rails'
 gem 'will_paginate-bootstrap'
 gem 'truncate_html'

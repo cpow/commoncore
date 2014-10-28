@@ -1,0 +1,33 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3><%= lesson_plan.name %></h3></div>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Description:</strong> <%= lesson_plan.description %>
+      </li>
+      <li class="list-group-item">
+        <strong>Agenda:</strong> <%= lesson_plan.agenda %>
+      </li>
+      <li class="list-group-item">
+        <strong>Objectives:</strong> <%= lesson_plan.objectives %>
+      </li>
+      <li class="list-group-item">
+        <strong>Materials:</strong> <%= lesson_plan.materials %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to("click here", lesson_plan.lesson_plan_file.url) %>
+      </li>
+      <li class="list-group-item">
+        <strong>Core Standard:</strong><%= lesson_plan.core_standards.map(&:dot_notation) %>
+      </li>
+
+      <li class="list-group-item">
+        <%= link_to 'Show', user_lesson_plan_path(lesson_plan, current_user) %>
+        <%= link_to 'Edit', edit_user_lesson_plan_path(lesson_plan, current_user) %>
+        <%= link_to 'Destroy', user_lesson_plan_path(lesson_plan, current_user), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+
+    </ul>
+  </div>
+</div>

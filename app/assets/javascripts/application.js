@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-button
 //= require bootstrap-wysihtml5
 //= require_tree .

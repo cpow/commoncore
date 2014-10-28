@@ -1,32 +1,4 @@
 %h1 Your Lesson Plans
-%table.lesson-plans.table
-  %tr
-    %th Name
-    %th Description
-    %th Linked Standards
-    %th Lesson plan file
-    %th Agenda
-    %th Objectives
-    %th Materials
-    %th
-    %th
-    %th
-    %th
-
-  - @lesson_plans.each do |lesson_plan|
-    %tr
-      %td= lesson_plan.name
-      %td= lesson_plan.description
-      %td= lesson_plan.core_standards.map(&:dot_notation)
-      %td= link_to("click here",
-        lesson_plan.lesson_plan_file.url)
-      %td= lesson_plan.agenda
-      %td= lesson_plan.objectives
-      %td= lesson_plan.materials
-      %td= link_to 'Show', user_lesson_plan_path(lesson_plan, current_user)
-      %td= link_to 'Edit', edit_user_lesson_plan_path(lesson_plan, current_user)
-      %td= link_to 'Destroy', user_lesson_plan_path(lesson_plan, current_user), method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
 = link_to 'New Lesson plan', new_user_lesson_plan_path(current_user)
+%br
+=render @lesson_plans
