@@ -3,6 +3,7 @@
 *= require_tree .
 */
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 .nav-pills {
@@ -10,8 +11,7 @@
 
 p, li {
   font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: 400;
 }
 
 .content {
@@ -29,12 +29,12 @@ p, li {
 /* Rails scaffold style compatibility */
 #error_explanation {
   @extend .alert;
-  @extend .alert-error !optional;
-  @extend .alert-block !optional;
+  @extend .alert-error;
+  @extend .alert-block;
 }
 
 .field_with_errors {
-  @extend .control-group.error !optional;
+  @extend .control-group.error;
 }
 
 .form-signin {
@@ -74,7 +74,6 @@ p, li {
 .jumbotron h1 {
   margin-bottom: 9px;
   font-size: 74px;
-  letter-spacing: -1px;
   line-height: 1;
 }
 .jumbotron p {
