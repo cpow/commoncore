@@ -1,6 +1,6 @@
-.row.span8.offset1
+.row.col-md-8.col-md-offset-2
   .jumbotron
-    %h1 
+    %h1
       =@post.title
     %hr
     .post_content
@@ -12,20 +12,18 @@
   %footer
     %hr
     .row
-      .span8
-        %div{:id => "comments"}
-          %h2 Comments
-          %ul
-            = cache("post_comments") do
-              = render @post.cached_comments
-          - if user_signed_in?
-            = render partial: "comments/form"
-          - else
-            %div{:class => "alert alert-notice"}
-              %p
-                you must be
-                = link_to "logged in", new_user_session_path
-                to comment
+      %div{:id => "comments"}
+        %h2 Comments
+        %ul
+          = cache("post_comments") do
+            = render @post.cached_comments
+        - if user_signed_in?
+          = render partial: "comments/form"
+        - else
+          %div{:class => "alert alert-notice"}
+            %p
+              you must be
+              = link_to "logged in", new_user_session_path
+              to comment
       %hr
-      .span8
-        =render 'shared/about_section'
+      =render 'shared/about_section'

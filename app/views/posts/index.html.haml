@@ -1,13 +1,11 @@
-.row.span8.offset1
+.row.col-md-8.col-md-offset-2
   .row
-    .span8
-      %h1 Class Act Blog
-      =render 'shared/about_section'
-      %hr
+    %h1 Class Act Blog
+    =render 'shared/about_section'
+    %hr
   .details
     =render @posts
   =will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "previous", next_label: "next"
   %footer
     %hr
     .row
-      .span8
