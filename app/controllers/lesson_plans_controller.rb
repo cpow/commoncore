@@ -44,7 +44,7 @@ class LessonPlansController < ApplicationController
   # POST /lesson_plans
   # POST /lesson_plans.json
   def create
-    lesson_plan_saver = LessonPlanSaver.new({user: current_user, params: params})
+    lesson_plan_saver = LessonPlanSaver.new(lesson_plan_params)
     @lesson_plan = lesson_plan_saver.lesson_plan
 
     respond_to do |format|
@@ -64,7 +64,7 @@ class LessonPlansController < ApplicationController
     @lesson_plan = current_user.lesson_plans.detect{params[:id]}
 
     respond_to do |format|
-      if @lesson_plan.update_attributes(params[:lesson_plan])
+      if @lesson_plan.update_attributes(lesson_plan_params)
         format.html { redirect_to lesson_plans_path, notice: 'Lesson plan was successfully updated.' }
         format.json { head :no_content }
       else
@@ -84,5 +84,11 @@ class LessonPlansController < ApplicationController
       format.html { redirect_to root_path }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def lesson_plan_params
+    params.require(:lesson_plan).permit!
   end
 end

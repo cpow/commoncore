@@ -1,6 +1,4 @@
 class LessonPlan < ActiveRecord::Base
-  attr_accessible :description, :lesson_plan_file, :name, :core_standards_attributes,
-    :agenda, :objectives, :materials
   belongs_to :user
   mount_uploader :lesson_plan_file, LessonPlanFileUploader
   has_many :comments, :as => :commentable

@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.cached_index.paginate(page: params[:page])
+    @posts = Post.all.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.cached_find(params[:id])
+    @post = Post.find(params[:id])
     @commentable = @post
 
     respond_to do |format|

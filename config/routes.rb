@@ -1,17 +1,14 @@
-Commoncore::Application.routes.draw do  devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "omniauth_callbacks"}
-  devise_scope :user do match '/auth/stripe_connect/callback' => 'omniauth_callbacks#stripe_connect' end
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+Commoncore::Application.routes.draw do
+  devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "omniauth_callbacks"}
+  devise_scope :user do
+    get '/auth/stripe_connect/callback', to: 'omniauth_callbacks#stripe_connect'
+  end
 
   resources :leads
 
-  match 'posts/page/:page' => 'posts#index'
+  get 'posts/page/:page', to: 'posts#index'
 
-  authenticated :user do
-    root :to => 'posts#index'
-  end
-
-  root :to => "landing#index"
-  devise_for :users
+  root to: "landing#index"
   resources :landing
   resources :posts do
     resources :comments

@@ -1,30 +1,28 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.10'
-gem 'sass-rails'
-gem 'coffee-rails', '~> 3.2.1'
+gem 'rails', '4.1.1'
+gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 gem 'pry', :group => [:test, :development]
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'shoulda-matchers', group: :test, require: false
 gem "thin", ">= 1.5.0"
 gem "pg", ">= 0.14.1"
 gem 'json'
 gem 'oj'
 gem 'multi_json', '~>1.7.2'
-gem "haml", ">= 3.1.7"
+gem "haml"
 gem "typhoeus"
-gem "haml-rails", ">= 0.3.5"
-gem 'rails_admin',
-  git: 'https://github.com/sumitag/rails_admin.git',
-  branch: 'my_backported_branch'
+gem "haml-rails"
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 3.1.1", :group => :development
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
-gem "capybara", '~> 2.1.0', :group => :test
+gem "capybara"
 gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 gem "bootstrap-sass"
+gem 'autoprefixer-rails'
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
@@ -51,3 +49,6 @@ gem 'omniauth-stripe-connect'
 gem 'rack-mini-profiler'
 gem 'cache_digests'
 gem 'dalli'
+gem 'sass-rails', '~>4.0.3'
+gem 'compass-rails'
+gem 'actionpack-page_caching'
