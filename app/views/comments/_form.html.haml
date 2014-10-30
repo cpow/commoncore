@@ -3,6 +3,6 @@
   %div{:class => "alert alert-error fade in", :id => "new_comment_errors", :style => "display:none;"}
   = f.hidden_field :user_id, :value => current_user.id
   = f.label :content
-  = f.text_area :content
+  = f.text_area :content, class: 'form-control'
   .actions
     = f.submit
