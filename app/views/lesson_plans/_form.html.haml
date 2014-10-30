@@ -11,7 +11,7 @@
         = f.text_field :name, class: 'form-control'
 
       .row
-        .span3
+        .col-md-3
           %h4
             GRADE
           %ul#grade
@@ -42,7 +42,7 @@
             %li
               =link_to "12th", "#", :id => "12", :class => "grade"
 
-        .span3
+        .col-md-3
           %h4
             SUBJECT
           %ul#subject
@@ -51,7 +51,7 @@
             %li
               =link_to "Literacy", "#", :id => "Literacy", :class => "subject"
 
-        .span3
+        .col-md-3
           %h4
             CORE STANDARD
           %ul.unstyled#core_standard
@@ -75,10 +75,12 @@
         = f.submit 'Save', :class => "btn btn-large btn-block btn-success"
         = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-large btn-block"
 
-  #my_modal.modal.hide.fade
-    .modal-header
-      %button{"type" => "button", "class" => "close", "data-dismiss" => "modal", "aria-hidden" => "true"}
-        &times;
-      %h3
-        Core Standard Information
-    .modal-body
+  #my_modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{"type" => "button", "class" => "close", "data-dismiss" => "modal", "aria-hidden" => "true"}
+            &times;
+          %h3
+            Core Standard Information
+        .modal-body
