@@ -5,7 +5,6 @@ feature 'User creates a new lesson plan' do
     user = create_logged_in_user
     grade_level = FactoryGirl.create(:grade_level)
     visit new_user_lesson_plan_path(user)
-    save_and_open_page
 
     fill_in 'Name', with: Faker::Name.first_name
     click_link('K')

@@ -44,7 +44,8 @@ class LessonPlansController < ApplicationController
   # POST /lesson_plans
   # POST /lesson_plans.json
   def create
-    lesson_plan_saver = LessonPlanSaver.new(lesson_plan_params)
+    lesson_plan_saver = LessonPlanSaver.new(user: current_user,
+                                            params: lesson_plan_params)
     @lesson_plan = lesson_plan_saver.lesson_plan
 
     respond_to do |format|
@@ -89,6 +90,9 @@ class LessonPlansController < ApplicationController
   private
 
   def lesson_plan_params
-    params.require(:lesson_plan).permit!
+    params.require(:lesson_plan).permit(:agenda, :id, :user_id, :materials,
+                                        :objectives, :lesson_plan_file,
+                                        :name, :description,
+                                        core_standard_ids: [])
   end
 end

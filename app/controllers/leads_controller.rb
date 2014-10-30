@@ -6,7 +6,7 @@ class LeadsController < ApplicationController
   end
 
   def create
-    @lead = Lead.new(params[:lead])
+    @lead = Lead.new(lead_params)
 
     respond_to do |format|
       if @lead.save
@@ -18,5 +18,11 @@ class LeadsController < ApplicationController
         format.json { render json: @lesson_plan.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def lead_params
+    params.require(:lead).permit(:name, :email, :lead_type)
   end
 end

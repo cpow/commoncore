@@ -1,4 +1,5 @@
 %h1 Your Lesson Plans
 = link_to 'New Lesson plan', new_user_lesson_plan_path(current_user)
 %br
-=render @lesson_plans
+.lesson-plans
+  =render @lesson_plans

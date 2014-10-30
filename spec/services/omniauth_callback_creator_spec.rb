@@ -30,7 +30,7 @@ describe OmniauthCallbackCreator do
     specify{subject.should respond_to(:save)}
 
     describe "#save" do
-      specify{subject.save.should be_true}
+      specify{subject.save.should be}
       before{subject.save}
       specify{StripeConnect.count.should eql(1)}
     end

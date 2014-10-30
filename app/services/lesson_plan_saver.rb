@@ -3,7 +3,7 @@ class LessonPlanSaver
   def initialize(opts={})
     @params = opts[:params]
     @user = opts[:user]
-    @lesson_plan = @user.lesson_plans.build(@params[:lesson_plan])
+    @lesson_plan = @user.lesson_plans.build(@params)
   end
 
   def save

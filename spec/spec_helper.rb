@@ -14,6 +14,7 @@ Capybara.javascript_driver = :webkit
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+  config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
   config.include Features, type: :feature

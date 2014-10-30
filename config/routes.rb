@@ -12,8 +12,6 @@ Commoncore::Application.routes.draw do
   resources :landing
   resources :posts do
     resources :comments
-    get :index
-    get :show
   end
 
   resources :core_standards do

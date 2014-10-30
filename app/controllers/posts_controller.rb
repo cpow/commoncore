@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(params[:post])
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
@@ -43,5 +43,11 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:body, :title, :id, :user_id)
   end
 end
