@@ -26,6 +26,6 @@
         %b Materials:
         = @lesson_plan.materials
 
-  = link_to 'Edit', edit_user_lesson_plan_path(@lesson_plan, current_user)
+  = link_to 'Edit', edit_user_lesson_plan_path(current_user, @lesson_plan)
   \|
   = link_to 'Back', user_lesson_plans_path(current_user)

@@ -23,9 +23,9 @@
       </li>
 
       <li class="list-group-item">
-        <%= link_to 'Show', user_lesson_plan_path(lesson_plan, current_user) %>
-        <%= link_to 'Edit', edit_user_lesson_plan_path(lesson_plan, current_user) %>
-        <%= link_to 'Destroy', user_lesson_plan_path(lesson_plan, current_user), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Show', user_lesson_plan_path(current_user, lesson_plan) %>
+        <%= link_to 'Edit', edit_user_lesson_plan_path(current_user, lesson_plan) %>
+        <%= link_to 'Destroy', user_lesson_plan_path(current_user, lesson_plan), method: :delete, data: { confirm: 'Are you sure?' } %>
       </li>
 
     </ul>
