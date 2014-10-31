@@ -1,5 +1,5 @@
 .well
-  = form_for [:user, @lesson_plan] do |f|
+  = form_for [current_user, @lesson_plan] do |f|
     - if @lesson_plan.errors.any?
       %div{:class => "alert alert-error fade in"}
         %a.close{"data-dismiss" => "alert"} ×

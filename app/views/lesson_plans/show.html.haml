@@ -1,27 +1,30 @@
-.span9.offset1.well
-  %p#notice= notice
+.col-md-8.col-md-offset-2
+  .panel.panel-default
+    #notice= notice
 
-  %h1
-    = @lesson_plan.name
-  %p
-    %b Description:
-    = @lesson_plan.description
+    .panel-heading
+      %h1
+        = @lesson_plan.name
+    .list-group
+      .list-group-item
+        %b Description:
+        = @lesson_plan.description
 
-  %p
-    %b Lesson plan file:
-    = link_to("click here", @lesson_plan.lesson_plan_file.url)
+      .list-group-item
+        %b Lesson plan file:
+        = link_to("file here", @lesson_plan.lesson_plan_file.url)
 
-  %p
-    %b Agenda:
-    = @lesson_plan.agenda
+      .list-group-item
+        %b Agenda:
+        = @lesson_plan.agenda
 
-  %p
-    %b Objectives:
-    = @lesson_plan.objectives
+      .list-group-item
+        %b Objectives:
+        = @lesson_plan.objectives
 
-  %p
-    %b Materials:
-    = @lesson_plan.materials
+      .list-group-item
+        %b Materials:
+        = @lesson_plan.materials
 
   = link_to 'Edit', edit_user_lesson_plan_path(@lesson_plan, current_user)
   \|

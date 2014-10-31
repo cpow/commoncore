@@ -38,7 +38,7 @@ class LessonPlansController < ApplicationController
 
   # GET /lesson_plans/1/edit
   def edit
-    @lesson_plan = current_user.lesson_plans.detect{params[:id]}
+    @lesson_plan = LessonPlan.find(params[:id])
   end
 
   # POST /lesson_plans
