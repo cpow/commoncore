@@ -1,4 +1,5 @@
 Commoncore::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "omniauth_callbacks"}
   devise_scope :user do
     get '/auth/stripe_connect/callback', to: 'omniauth_callbacks#stripe_connect'
