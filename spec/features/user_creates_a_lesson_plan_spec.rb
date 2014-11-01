@@ -23,4 +23,32 @@ feature 'User creates a new lesson plan' do
 
     expect(page).to have_content 'Lesson plan was successfully created'
   end
+
+  scenario 'user looks at a lesson plan\'s show page' do
+    user = create_logged_in_user
+    FactoryGirl.create(:grade_level)
+    lesson_plan = create :lesson_plan, user: user
+    visit user_lesson_plans_path(user)
+
+    within("ul.list-group") do
+      click_on 'Show'
+    end
+
+    expect(page).to have_content(lesson_plan.core_standards.first.dot_notation)
+  end
+
+  scenario 'user can edit a lesson plan' do
+    user = create_logged_in_user
+    FactoryGirl.create(:grade_level)
+    create :lesson_plan, user: user
+    visit user_lesson_plans_path(user)
+
+    within("ul.list-group") do
+      click_on 'Edit'
+    end
+
+    fill_in "Agenda", with: 'something else'
+    click_on "Save"
+    expect(page).to have_content('successful')
+  end
 end

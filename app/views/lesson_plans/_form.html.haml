@@ -5,75 +5,77 @@
         %a.close{"data-dismiss" => "alert"} ×
         - @lesson_plan.errors.full_messages.each do |msg|
           = content_tag :div, msg, :id => "flash_errors"
-    .input-group
-      .field
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
+    .field
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
 
-      .row
-        .col-md-3
-          %h4
-            GRADE
-          %ul#grade
-            %li
-              =link_to "Kindergarten", "#", :id => "K", :class => "grade"
-            %li
-              =link_to "1st", "#", :id => "01", :class => "grade"
-            %li
-              =link_to "2nd", "#", :id => "02", :class => "grade"
-            %li
-              =link_to "3rd", "#", :id => "03", :class => "grade"
-            %li
-              =link_to "4th", "#", :id => "04", :class => "grade"
-            %li
-              =link_to "5th", "#", :id => "05", :class => "grade"
-            %li
-              =link_to "6th", "#", :id => "06", :class => "grade"
-            %li
-              =link_to "7th", "#", :id => "07", :class => "grade"
-            %li
-              =link_to "8th", "#", :id => "08", :class => "grade"
-            %li
-              =link_to "9th", "#", :id => "09", :class => "grade"
-            %li
-              =link_to "10th", "#", :id => "10", :class => "grade"
-            %li
-              =link_to "11th", "#", :id => "11", :class => "grade"
-            %li
-              =link_to "12th", "#", :id => "12", :class => "grade"
+    .row
+      .col-md-3
+        %h4
+          GRADE
+        %ul#grade
+          %li
+            =link_to "Kindergarten", "#", :id => "K", :class => "grade"
+          %li
+            =link_to "1st", "#", :id => "01", :class => "grade"
+          %li
+            =link_to "2nd", "#", :id => "02", :class => "grade"
+          %li
+            =link_to "3rd", "#", :id => "03", :class => "grade"
+          %li
+            =link_to "4th", "#", :id => "04", :class => "grade"
+          %li
+            =link_to "5th", "#", :id => "05", :class => "grade"
+          %li
+            =link_to "6th", "#", :id => "06", :class => "grade"
+          %li
+            =link_to "7th", "#", :id => "07", :class => "grade"
+          %li
+            =link_to "8th", "#", :id => "08", :class => "grade"
+          %li
+            =link_to "9th", "#", :id => "09", :class => "grade"
+          %li
+            =link_to "10th", "#", :id => "10", :class => "grade"
+          %li
+            =link_to "11th", "#", :id => "11", :class => "grade"
+          %li
+            =link_to "12th", "#", :id => "12", :class => "grade"
 
-        .col-md-3
-          %h4
-            SUBJECT
-          %ul#subject
-            %li
-              =link_to "Math", "#", :id => "Math", :class => "subject"
-            %li
-              =link_to "Literacy", "#", :id => "Literacy", :class => "subject"
+      .col-md-3
+        %h4
+          SUBJECT
+        %ul#subject
+          %li
+            =link_to "Math", "#", :id => "Math", :class => "subject"
+          %li
+            =link_to "Literacy", "#", :id => "Literacy", :class => "subject"
 
-        .col-md-3
-          %h4
-            CORE STANDARD
-          %ul.unstyled#core_standard
+      .col-md-3
+        %h4
+          CORE STANDARD
+        %ul.unstyled#core_standard
 
-      .field
-        = f.label :description
-        = f.text_area :description, :class => "wysihtml5 form-control"
-      .field
-        = f.label :agenda
-        = f.text_area :agenda, cols: '100', rows: '10', class: 'form-control'
-      .field
-        = f.label :materials
-        = f.text_area :materials, cols: '100', rows: '10', class: 'form-control'
-      .field
-        = f.label :objectives
-        = f.text_area :objectives, cols: '100', rows: '10', class: 'form-control'
-      .field
-        = f.label :lesson_plan_file
-        = f.file_field :lesson_plan_file, class: 'form-control'
-      .actions
-        = f.submit 'Save', :class => "btn btn-large btn-block btn-success"
-        = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-large btn-block"
+    .field
+      = f.label :description
+      = f.text_area :description, :class => "wysihtml5 form-control"
+    .field
+      = f.label :agenda
+      = f.text_area :agenda, cols: '100', rows: '10', class: 'form-control'
+    .field
+      = f.label :materials
+      = f.text_area :materials, cols: '100', rows: '10', class: 'form-control'
+    .field
+      = f.label :objectives
+      = f.text_area :objectives, cols: '100', rows: '10', class: 'form-control'
+    .field
+      = f.label :lesson_plan_file
+      = f.file_field :lesson_plan_file, class: 'form-control'
+
+    %br
+
+    .actions
+      = f.submit 'Save', :class => "btn btn-large btn-block btn-success"
+      = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-default btn-block"
 
   #my_modal.modal.fade
     .modal-dialog

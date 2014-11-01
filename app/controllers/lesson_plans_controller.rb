@@ -66,7 +66,8 @@ class LessonPlansController < ApplicationController
 
     respond_to do |format|
       if @lesson_plan.update_attributes(lesson_plan_params)
-        format.html { redirect_to lesson_plans_path, notice: 'Lesson plan was successfully updated.' }
+        format.html { redirect_to user_lesson_plans_path(current_user),
+                      notice: 'Lesson plan was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

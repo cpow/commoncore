@@ -7,6 +7,9 @@
         = @lesson_plan.name
     .list-group
       .list-group-item
+        %b Core Standards:
+        = @lesson_plan.core_standards.map(&:dot_notation)
+      .list-group-item
         %b Description:
         = @lesson_plan.description
 
