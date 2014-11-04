@@ -5,7 +5,6 @@ feature 'blogger creates a new post' do
     user = create_logged_in_blogger
     visit new_user_post_path(user)
 
-    expect(page).to have_css 'title'
     fill_in 'Title', with: 'This is a post title'
     fill_in_html 'post_body', with: 'This is a post body'
     click_button 'Publish'
@@ -18,5 +17,16 @@ feature 'blogger creates a new post' do
     visit new_user_post_path(user)
 
     expect(page).to have_content 'authorized'
+  end
+
+  scenario 'and edits a post if they so want' do
+    user = create_logged_in_blogger
+    blog_post = create :post, user: user
+    visit edit_user_post_path(user, blog_post)
+
+    fill_in 'Title', with: 'this is something else'
+    click_button 'Publish'
+
+    expect(page).to have_content 'successful'
   end
 end

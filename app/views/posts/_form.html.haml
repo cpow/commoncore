@@ -1,6 +1,5 @@
 .span9.offset1.well
-  %title Create new Post
-  = form_for [:user, @post] do |f|
+  = form_for [current_user, @post] do |f|
     - if @post.errors.any?
       %div{:class => "alert alert-error fade in"}
         %a.close{"data-dismiss" => "alert"} ×
@@ -16,4 +15,4 @@
 
     .actions
       = f.submit 'Publish', :class => "btn btn-large btn-block btn-success"
-      = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-large btn-block"
+      = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-large btn-block btn-default"
