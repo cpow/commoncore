@@ -3,18 +3,17 @@ User: #{link_to @user.name, @user}
 %br
 
 %div.row
-%h1 Lesson Plans
-=link_to "Create Lesson Plan", new_user_lesson_plan_path(current_user)
-%br
-=render @lesson_plans
+  %h1 Lesson Plans
+  =link_to "Create Lesson Plan", new_user_lesson_plan_path(current_user)
+  %br
+  =render @lesson_plans
 
 %div.row
 = if current_user.has_role?(:blogger)
   %h3 #{link_to "Blog", posts_path}
   %ul{class: "user_#{@user.id}_posts"}
   =link_to "Create a new post", new_user_post_path(current_user)
-    - @posts.each do |post|
-      %li
-        =link_to post.title, post_path(post)
-        =link_to 'edit post', edit_user_post_path(current_user, post)
-
+  - @posts.each do |post|
+    %li
+      =link_to post.title, post_path(post)
+      =link_to 'edit post', edit_user_post_path(current_user, post)
