@@ -10,9 +10,9 @@ User: #{link_to @user.name, @user}
 
 %div.row
 = if current_user.has_role?(:blogger)
-  =link_to "Create a new post", new_user_post_path(current_user)
   %h3 #{link_to "Blog", posts_path}
   %ul{class: "user_#{@user.id}_posts"}
+  =link_to "Create a new post", new_user_post_path(current_user)
     - @posts.each do |post|
       %li
         =link_to post.title, post_path(post)
