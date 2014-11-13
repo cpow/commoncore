@@ -18,9 +18,11 @@ $ ->
 
   $(".grade").click ->
     $(@).addClass("selected")
+    $(@).addClass('highlight')
     $("ul#subject").slideDown()
 
   $(".subject").click ->
+    $(@).addClass('highlight')
     $("ul#core_standard").html("")
     $("ul#core_standard").slideUp()
     $.ajax '/core_standards/specific_core_standard',
