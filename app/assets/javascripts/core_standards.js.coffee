@@ -9,6 +9,7 @@ populate_core_standards = (data) ->
 toggle_modal_listener = (data) ->
  $(".dot_notation").click ->
   $("#my_modal .modal-body").html("<h3>#{$(@).attr("id")}</h3><p>#{$(@).data("statement")}</p>")
+  $(@).addClass('highlight')
   $("#my_modal").modal('toggle')
 
 $ ->

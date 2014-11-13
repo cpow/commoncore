@@ -3,13 +3,17 @@ require 'rexml/document'
 
 puts 'ROLES'
 YAML.load(ENV['ROLES']).each do |role|
-  Role.find_or_create_by_name({ :name => role }, :without_protection => true)
+  Role.where(name: role).first_or_create
   puts 'role: ' << role
 end
 
 unless Rails.env.eql?("production")
   puts 'DEFAULT USERS'
-  user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
+  user = User.create!(:name => ENV['ADMIN_NAME'].dup,
+    :email => ENV['ADMIN_EMAIL'].dup,
+    :password => ENV['ADMIN_PASSWORD'].dup,
+    :password_confirmation => ENV['ADMIN_PASSWORD'].dup)
+
   puts 'user: ' << user.name
   user.add_role :admin
 
