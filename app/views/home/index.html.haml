@@ -1,4 +1,4 @@
-%h3 Home
+%h1 Home
 User: #{link_to @user.name, @user}
 %br
 
@@ -17,3 +17,11 @@ User: #{link_to @user.name, @user}
     %li
       =link_to post.title, post_path(post)
       =link_to 'edit post', edit_user_post_path(current_user, post)
+
+%div.row
+  %h1 Newsletters
+  =link_to "Coming Soon", page_path(id: 'newsletters')
+
+%div.row
+  %h1 Chat Rooms
+  =link_to "Coming Soon", page_path(id: 'chat_rooms')
