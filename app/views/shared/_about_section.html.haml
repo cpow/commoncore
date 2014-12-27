@@ -3,7 +3,7 @@
     %li.active
       =link_to "About", "#tab1", :data => {:toggle => "tab"}
     %li
-      =link_to "ClassAct Beta", "#tab2", :data => {:toggle => "tab"}
+      =link_to "Create an Account!", "#tab2", :data => {:toggle => "tab"}
   .tab-content
     .tab-pane.active{:id => "tab1"}
       =cache("static_about") do
@@ -28,6 +28,6 @@
           We are hosting a beta for the classact application shortly. If you like, Please enter your email address and we'll contact you when the beta starts! (we will not spam you're email... we promise)
       - if user_signed_in?
         %div{:class => "alert alert-success"}
-          %p You already created an account, so you are automatically signed up for the beta!
+          %p You are already logged in :)
       - else
-        = render partial: "/leads/remote_form", locals: {lead_type: "beta_test"}
+        = link_to "Create Account", new_user_registration_path, class: 'btn btn-success'
