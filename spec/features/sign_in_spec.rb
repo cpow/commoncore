@@ -5,7 +5,7 @@ describe "user sign in and sign up behavior" do
     context "when a user has not signed up yet" do
       it "should show sign up link and say 'welcome'" do
         visit root_path
-        page.should have_content("Sign up")
+        page.should have_content("Sign Up")
       end
     end
 

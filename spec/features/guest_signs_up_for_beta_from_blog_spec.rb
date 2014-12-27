@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature 'Guest signs up for beta from blog' do
   scenario 'enters correct information' do
+    pending 'no longer in beta mode'
     visit posts_path
     expect(page).to have_content 'ClassAct Beta'
     click_link 'ClassAct Beta'
@@ -11,6 +12,7 @@ feature 'Guest signs up for beta from blog' do
   end
 
   scenario 'enters incorrect information' do
+    pending 'no longer in beta mode'
     visit posts_path
     expect(page).to have_content 'ClassAct Beta'
     click_link 'ClassAct Beta'

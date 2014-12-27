@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature 'Guest signs up for beta from homepage' do
   scenario 'enters correct information' do
+    pending 'no longer in beta mode'
     visit root_path
     expect(page).to have_content 'Sign up for our Beta'
     click_link 'Sign up for our Beta'
@@ -11,6 +12,7 @@ feature 'Guest signs up for beta from homepage' do
   end
 
   scenario 'enters incorrect information' do
+    pending 'no longer in beta mode'
     visit root_path
     expect(page).to have_content "Sign up for our Beta"
     click_link 'Sign up for our Beta'
