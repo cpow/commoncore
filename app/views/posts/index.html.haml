@@ -4,7 +4,7 @@
       %h1 Class Act Blog
       =render 'shared/about_section'
       %hr
-  .details
+  .post_content
     =render @posts
   =will_paginate @posts, previous_label: "previous", next_label: "next"
   %footer

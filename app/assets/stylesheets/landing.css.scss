@@ -1,17 +1,6 @@
 .landing {
-  $teal: #41A0BD;
-  $orange: #F7941D;
   font-family: helvetica;
   margin: 0;
-
-  a {
-    font-weight: 700;
-  }
-
-  hr {
-    margin-bottom: 60px;
-    margin-top: 60px;
-  }
 
   .landing_header {
     padding-top: 60px;
@@ -56,43 +45,10 @@
     border-radius: 6px;
   }
 
-  .btn {
-    font-family: 'Roboto Slab', serif;
-    display: block;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    color: white;
-    text-decoration: none;
-    &.dark {
-      background: #474747;
-    }
-    &.green {
-      background: #00CC00;
-    }
-    &.orange {
-      border: 1px darken($orange, 10) solid;
-      background: $orange;
-    }
-    &.light {
-      border: 1px darken($teal, 15) solid;
-      background: darken($teal, 10);
-    }
-    &:hover {
-      color: #ddd;
-    }
-  }
 
   .landing_content {
     @include outer-container;
     p {
-      line-height: 1.6em;
-      font-weight: 200;
-      font-size: 18px;
-      color: #7d7d7d;
       &.left {
         margin-top: 0;
         @include span-columns(6);
@@ -103,23 +59,11 @@
       }
     }
     h3 {
-      margin-top: 0;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 300;
-      color: #4d4d4d;
-      text-align: center;
-      font-size: 26px;
+     font-size: 26px;
       & strong {
         font-weight: 700;
         color: darken($teal, 10);
       }
-    }
-    h4 {
-      font-decoration: underline;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 400;
-      font-size: 20px;
-      color: #4d4d4d;
     }
 
     ul {
@@ -142,28 +86,6 @@
     }
   }
 
-  .navbar {
-    @include outer-container;
-  }
-  .nav {
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
-    padding: 0;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    a {
-      color: $orange;
-      text-decoration: none;
-      &:hover {
-        color: darken($teal, 10);
-      }
-    }
-    li {
-      padding-right: 20px;
-      display: inline;
-      text-decoration: none;
-    }
-  }
 
   .icon-cog-alt {
     font-size: 100px;

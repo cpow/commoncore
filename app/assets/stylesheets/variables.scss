@@ -1,0 +1,35 @@
+a {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6em;
+  font-weight: 200;
+  font-size: 18px;
+  color: #7d7d7d;
+}
+
+h3 {
+  margin-top: 0;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  color: #4d4d4d;
+  text-align: center;
+  font-size: 26px;
+}
+
+hr {
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+h4 {
+  font-decoration: underline;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #4d4d4d;
+}
+
+$teal: #41A0BD;
+$orange: #F7941D;

@@ -1,0 +1,29 @@
+.btn {
+  font-family: 'Roboto Slab', serif;
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  &.dark {
+    background: #474747;
+  }
+  &.green {
+    background: #00CC00;
+  }
+  &.orange {
+    border: 1px darken($orange, 10) solid;
+    background: $orange;
+  }
+  &.light {
+    border: 1px darken($teal, 15) solid;
+    background: darken($teal, 10);
+  }
+  &:hover {
+    color: #ddd;
+  }
+}
