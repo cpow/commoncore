@@ -9,7 +9,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.paginate(page: params[:page])
+    if params[:post_type]
+      @posts = Post.where(post_type: params[:post_type]).paginate(page: params[:page])
+    else
+      @posts = Post.where(post_type: 'blog').paginate(page: params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

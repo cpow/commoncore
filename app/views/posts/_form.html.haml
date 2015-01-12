@@ -10,6 +10,10 @@
       = f.text_field :title
 
     .field
+      = f.label :post_type
+      = f.select :post_type, collection: Post::POST_TYPES
+
+    .field
       = f.label :body
       = f.text_area :body, :class => "wysihtml5", :style => "width:100%;"
 

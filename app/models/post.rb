@@ -6,6 +6,11 @@ class Post < ActiveRecord::Base
 
   after_commit :flush_cache
 
+  POST_TYPES = [
+    'blog',
+    'gracious_greeting'
+  ]
+
   def self.cached_index
     Rails.cache.fetch([name, "index"]){all(order: "created_at DESC")}
   end

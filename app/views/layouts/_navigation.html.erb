@@ -10,12 +10,13 @@
  <div class="collapse navbar-collapse" id="navigationbar">
      <ul class="nav navbar-nav">
        <li><%= link_to "About", page_path("about") %></li>
+       <li><%= link_to "Blog", posts_path %></li>
+       <li><%= link_to "Gracious Greeting", posts_path(post_type: 'gracious_greeting') %></li>
        <% if user_signed_in? %>
          <li><%= link_to 'Dashboard', user_home_index_path(current_user) %></li>
          <li><%= link_to 'Lesson Plans', user_lesson_plans_path(current_user) %></li>
          <li><%= link_to 'Logout', destroy_user_session_path, :method =>'delete' %></li>
          <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-         <li><%= link_to "Blog", posts_path %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>
          <li><%= link_to "Create Account", new_user_registration_path %></li>
