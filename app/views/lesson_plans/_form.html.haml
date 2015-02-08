@@ -1,13 +1,35 @@
-.well
-  = form_for [current_user, @lesson_plan] do |f|
-    - if @lesson_plan.errors.any?
-      %div{:class => "alert alert-error fade in"}
-        %a.close{"data-dismiss" => "alert"} ×
-        - @lesson_plan.errors.full_messages.each do |msg|
-          = content_tag :div, msg, :id => "flash_errors"
+= form_for [current_user, @lesson_plan] do |f|
+
+  = f.hidden_field :id
+
+  - if @lesson_plan.errors.any?
+    %div{:class => "alert alert-error fade in"}
+      %a.close{"data-dismiss" => "alert"} ×
+      - @lesson_plan.errors.full_messages.each do |msg|
+        = content_tag :div, msg, :id => "flash_errors"
+  .well
+    %h3 Lesson Plan Name
+    %p enter a name for your lesson plan here. so you can remember later easier
     .field
       = f.label :name
       = f.text_field :name, class: 'form-control'
+
+  .well
+    %h3 Core Standards
+    %p
+      Select any/all core standards that are associated to this lesson plan.
+      First select the grade on the left, then the subject type, and finally,
+      the core standard. You can click on each core standard for a brief overview.
+    .h3
+      Current Core Standards:
+    %ul#selected-core-standards
+      - if  @lesson_plan.core_standards.present?
+        - @lesson_plan.core_standards.each do |standard|
+          %li{id: standard.id}
+            = standard.dot_notation
+            %a{ href: "#", class: 'delete-standard', id: standard.id, "data-lesson_plan_id" => @lesson_plan.id}
+              remove
+
 
     .row
       .col-md-3
@@ -55,6 +77,9 @@
           CORE STANDARD
         %ul.unstyled#core_standard
 
+  .well
+    %h3 Everything Else
+    %p This is where we put everything else for the lesson plan
     .field
       = f.label :description
       = f.text_area :description, :class => "wysihtml5 form-control"
@@ -71,18 +96,16 @@
       = f.label :lesson_plan_file
       = f.file_field :lesson_plan_file, class: 'form-control'
 
-    %br
+  .actions
+    = f.submit 'Save', :class => "btn btn-large btn-block btn-success"
+    = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-default btn-block"
 
-    .actions
-      = f.submit 'Save', :class => "btn btn-large btn-block btn-success"
-      = link_to 'Back', user_lesson_plans_path(current_user), :class => "btn btn-default btn-block"
-
-  #my_modal.modal.fade
-    .modal-dialog
-      .modal-content
-        .modal-header
-          %button{"type" => "button", "class" => "close", "data-dismiss" => "modal", "aria-hidden" => "true"}
-            &times;
-          %h3
-            Core Standard Information
-        .modal-body
+#my_modal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{"type" => "button", "class" => "close", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3
+          Core Standard Information
+      .modal-body

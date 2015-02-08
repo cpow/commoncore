@@ -7,6 +7,10 @@ Commoncore::Application.routes.draw do
 
   resources :leads
 
+  namespace :api, defaults: {format: 'json'} do
+    resources :remove_core_standard_from_lesson_plans, only: :create
+  end
+
   get 'posts/page/:page', to: 'posts#index'
 
   root to: "landing#index"

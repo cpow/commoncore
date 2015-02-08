@@ -8,7 +8,10 @@
     .list-group
       .list-group-item
         %b Core Standards:
-        = @lesson_plan.core_standards.map(&:dot_notation)
+        %ul
+          - @lesson_plan.core_standards.each do |standard|
+            %li
+              = standard.dot_notation
       .list-group-item
         %b Description:
         = @lesson_plan.description
