@@ -9,14 +9,15 @@
         = content_tag :div, msg, :id => "flash_errors"
   .well
     %h3 Lesson Plan Name
-    %p enter a name for your lesson plan here. so you can remember later easier
+    %p.alert
+      enter a name for your lesson plan here. so you can remember later easier
     .field
       = f.label :name
       = f.text_field :name, class: 'form-control'
 
   .well
     %h3 Core Standards
-    %p
+    %p.alert
       Select any/all core standards that are associated to this lesson plan.
       First select the grade on the left, then the subject type, and finally,
       the core standard. You can click on each core standard for a brief overview.
@@ -79,7 +80,8 @@
 
   .well
     %h3 Everything Else
-    %p This is where we put everything else for the lesson plan
+    %p.alert
+      This is where we put everything else for the lesson plan
     .field
       = f.label :description
       = f.text_area :description, :class => "wysihtml5 form-control"
