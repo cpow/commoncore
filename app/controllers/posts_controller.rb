@@ -10,9 +10,13 @@ class PostsController < ApplicationController
 
   def index
     if params[:post_type]
-      @posts = Post.where(post_type: params[:post_type]).paginate(page: params[:page])
+      @posts = Post.where(post_type: params[:post_type])
+        .order('created_at DESC')
+        .paginate(page: params[:page])
     else
-      @posts = Post.where(post_type: 'blog').paginate(page: params[:page])
+      @posts = Post.where(post_type: 'blog')
+        .order('created_at DESC')
+        .paginate(page: params[:page])
     end
 
     respond_to do |format|
